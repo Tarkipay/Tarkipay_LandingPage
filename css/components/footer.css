@@ -1,0 +1,85 @@
+/* ==========================================================================
+   TarkiPay - Footer Component (footer.css)
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-indigo-dark);
+  color: #E2E8F0;
+  padding: 4.5rem 0 2rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand .brand-monochrome .brand-name {
+  color: #FFFFFF;
+}
+
+.footer-brand .brand-monochrome .brand-name span {
+  color: var(--color-turquesa);
+}
+
+.brand-tagline {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #94A3B8;
+  max-width: 320px;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.footer-column h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+}
+
+.footer-column a {
+  display: block;
+  text-decoration: none;
+  color: #94A3B8;
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+  transition: var(--transition-smooth);
+}
+
+.footer-column a:hover {
+  color: var(--color-turquesa);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748B;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

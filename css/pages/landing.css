@@ -1,0 +1,28 @@
+/* ==========================================================================
+   TarkiPay - Landing Page Specific Styles (landing.css)
+   ========================================================================== */
+
+#landing-content {
+  min-height: calc(100vh - 72px);
+}
+
+/* Animaciones de scroll y transiciones de carga */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Estado de carga de componentes */
+.component-loading {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}

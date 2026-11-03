@@ -1,0 +1,111 @@
+/* ==========================================================================
+   TarkiPay - Hero Section Component (hero.css)
+   ========================================================================== */
+
+.hero-section {
+  padding: 6rem 0 4rem;
+  background: radial-gradient(circle at top right, rgba(0, 210, 180, 0.08), transparent 45%),
+              radial-gradient(circle at bottom left, rgba(45, 20, 136, 0.06), transparent 50%);
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(0, 210, 180, 0.15);
+  color: var(--color-indigo-dark);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-indigo-dark);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-title span {
+  color: var(--color-pulso-indigo);
+  background: linear-gradient(135deg, var(--color-pulso-indigo), var(--color-turquesa-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+  max-width: 520px;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero-media {
+  display: flex;
+  justify-content: center;
+}
+
+.mockup-placeholder {
+  width: 100%;
+  max-width: 480px;
+  height: 360px;
+  background: linear-gradient(135deg, #EEF2F6, #E2E8F0);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+
+.mockup-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback-text {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+}

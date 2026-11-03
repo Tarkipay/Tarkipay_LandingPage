@@ -1,0 +1,72 @@
+/* ==========================================================================
+   TarkiPay - Navbar Component (navbar.css)
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  height: 36px;
+  width: auto;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-pulso-indigo);
+  letter-spacing: -0.02em;
+}
+
+.brand-name span {
+  color: var(--color-turquesa-dark);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-main);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+  color: var(--color-pulso-indigo);
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+}

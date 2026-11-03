@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contáctanos - Solicita una demostración o información sobre TarkiPay.">
+  <title>Contacto | TarkiPay</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components/navbar.css">
+  <link rel="stylesheet" href="../css/components/footer.css">
+  <link rel="stylesheet" href="../css/components/forms.css">
+  <link rel="stylesheet" href="../css/pages/contacto.css">
+</head>
+<body>
+  <!-- Header / Navbar Inyectado -->
+  <header id="navbar-container" class="site-header"></header>
+
+  <main class="contacto-page">
+    <div class="container contacto-layout">
+      <!-- Información lateral -->
+      <div class="contacto-info">
+        <span class="section-tag">Hablemos</span>
+        <h1>Da el siguiente paso hacia un cobro seguro</h1>
+        <p>
+          ¿Tienes dudas o te interesa implementar TarkiPay o TarkiPay Box en tu negocio? Nuestro equipo te responderá hoy mismo.
+        </p>
+
+        <div class="contacto-methods">
+          <div class="contact-method-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Ubicación</h4>
+              <span>Lima, Perú</span>
+            </div>
+          </div>
+          <div class="contact-method-item">
+            <div class="contact-icon">💬</div>
+            <div>
+              <h4>WhatsApp Comercial</h4>
+              <span>+51 900 000 000</span>
+            </div>
+          </div>
+          <div class="contact-method-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <h4>Correo</h4>
+              <span>contacto@tarkipay.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario de Contacto -->
+      <div class="contacto-card">
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="nombre" class="form-label">Nombre Completo *</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej. Roberto Sánchez" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Correo Electrónico *</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="nombre@tuempresa.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono" class="form-label">Teléfono / WhatsApp *</label>
+            <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+51 987 654 321" required>
+          </div>
+
+          <div class="form-group">
+            <label for="negocio" class="form-label">Tipo de Negocio</label>
+            <input type="text" id="negocio" name="negocio" class="form-control" placeholder="Ej. Bodega, Farmacia, Minimarket">
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje" class="form-label">¿En qué te podemos ayudar?</label>
+            <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Cuéntanos tus dudas o cuántas cajas deseas equipar..."></textarea>
+          </div>
+
+          <div id="form-status" class="form-feedback"></div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;">
+            Enviar Solicitud
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Inyectado -->
+  <footer id="footer-container" class="site-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="../js/app.js"></script>
+  <script src="../js/contacto.js"></script>
+</body>
+</html>
