@@ -6,3 +6,7 @@
 Thumbs.db
 node_modules/
 .env
+
+# Task-local extraction and rendering intermediates
+/tmp/
+~$*.docx

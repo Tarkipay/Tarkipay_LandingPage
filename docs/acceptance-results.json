@@ -1,0 +1,572 @@
+{
+  "date": "2026-11-23",
+  "environment": "Node.js, reloj fijo America/Lima; servicio local simulado",
+  "passed": 94,
+  "failed": 0,
+  "results": [
+    {
+      "hu": "HU-001",
+      "criterion": "CA01",
+      "name": "Orden cronológico aunque el servicio entregue invertido",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-001",
+      "criterion": "CA02",
+      "name": "Monto y hora originales conservados",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-001",
+      "criterion": "CA03",
+      "name": "Sin registros sin inventar pagos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-002",
+      "criterion": "CA01",
+      "name": "Detalle conserva campos leídos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-002",
+      "criterion": "CA02",
+      "name": "Datos ausentes explícitos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-002",
+      "criterion": "CA03",
+      "name": "Abrir no verifica",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-003",
+      "criterion": "CA01",
+      "name": "Yape y Plin conservan origen",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-003",
+      "criterion": "CA02",
+      "name": "Fuente incierta no se atribuye",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-003",
+      "criterion": "CA03",
+      "name": "Origen no comprueba ingreso",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-004",
+      "criterion": "CA01",
+      "name": "Registros identificados como avisos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-004",
+      "criterion": "CA02",
+      "name": "Leer conserva significado",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-004",
+      "criterion": "CA03",
+      "name": "Orientación a billetera presente",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-005",
+      "criterion": "CA01",
+      "name": "Monto positivo; rechaza cero, negativos y precisión inválida",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-005",
+      "criterion": "CA02",
+      "name": "Coincidencias exactas; búsqueda sin resultados",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-005",
+      "criterion": "CA03",
+      "name": "Quitar filtro restaura lista",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-006",
+      "criterion": "CA01",
+      "name": "Importes iguales son registros separados",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-006",
+      "criterion": "CA02",
+      "name": "Nombres y horas propios",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-006",
+      "criterion": "CA03",
+      "name": "Sin nombre no selecciona ni asocia automáticamente",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-007",
+      "criterion": "CA01",
+      "name": "Vacío no equivale a falta de pago",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-007",
+      "criterion": "CA02",
+      "name": "Sin acceso billetera no inventa confirmación",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-007",
+      "criterion": "CA03",
+      "name": "Tardío conserva identidad, ambas horas y se deduplica",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-008",
+      "criterion": "CA01",
+      "name": "Última actualización efectiva persistida",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-008",
+      "criterion": "CA02",
+      "name": "Actualizar procesa cola",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-008",
+      "criterion": "CA03",
+      "name": "Fallo conserva hora y cola hasta reintento",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-009",
+      "criterion": "CA01",
+      "name": "Consolidación de dos fuentes activas",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-009",
+      "criterion": "CA02",
+      "name": "Origen conservado por evento",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-009",
+      "criterion": "CA03",
+      "name": "Fuente desactivada rechazada sin inventar registros",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-010",
+      "criterion": "CA01",
+      "name": "Tres consecutivos separados",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-010",
+      "criterion": "CA02",
+      "name": "Orden por marcas temporales",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-010",
+      "criterion": "CA03",
+      "name": "Nuevos no eliminan anteriores",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-011",
+      "criterion": "CA01",
+      "name": "Monto consultable directamente",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-011",
+      "criterion": "CA02",
+      "name": "Consultar no exige venta",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-011",
+      "criterion": "CA03",
+      "name": "Monto ausente no inventado",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-012",
+      "criterion": "CA01",
+      "name": "Cuenta ficticia asociada a negocio único nuevo",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-012",
+      "criterion": "CA02",
+      "name": "Solo administrador modifica",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-012",
+      "criterion": "CA03",
+      "name": "Obligatorios y actualización atómica",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-013",
+      "criterion": "CA01",
+      "name": "Identidad estable en primer procesamiento",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-013",
+      "criterion": "CA02",
+      "name": "Reintentos dentro y entre actualizaciones idempotentes",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-013",
+      "criterion": "CA03",
+      "name": "Mismo importe diferente identidad se conserva",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-025",
+      "criterion": "CA01",
+      "name": "Administración y vencimiento visible",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-025",
+      "criterion": "CA02",
+      "name": "Código asociado al negocio y permisos; aún no miembro",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-025",
+      "criterion": "CA03",
+      "name": "Vencido usado y revocado no dan acceso",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-026",
+      "criterion": "CA01",
+      "name": "Vista previa y cancelar no concede acceso",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-026",
+      "criterion": "CA02",
+      "name": "Inválidos vencidos y usados rechazados al canjear",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-026",
+      "criterion": "CA03",
+      "name": "Canje crea solo colaborador sin administración",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-027",
+      "criterion": "CA01",
+      "name": "Colaborador obtiene campos permitidos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-027",
+      "criterion": "CA02",
+      "name": "Sin operaciones bancarias",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-027",
+      "criterion": "CA03",
+      "name": "Ausencias no amplían acceso",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-028",
+      "criterion": "CA01",
+      "name": "Persona identificada; cancelar conserva acceso",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-028",
+      "criterion": "CA02",
+      "name": "Confirmar bloquea consultas y futuras alertas simuladas",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-028",
+      "criterion": "CA03",
+      "name": "Historial conservado y nueva invitación recupera solo alcance nuevo",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-029",
+      "criterion": "CA01",
+      "name": "Nombre rol permiso estado",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-029",
+      "criterion": "CA02",
+      "name": "Revocados distintos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-029",
+      "criterion": "CA03",
+      "name": "Solo administración cambia alcance o lee lista",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-030",
+      "criterion": "CA01",
+      "name": "Horario individual zona negocio validada",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-030",
+      "criterion": "CA02",
+      "name": "En turno recibe, fuera y límite final no reciben nuevas alertas locales",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-030",
+      "criterion": "CA03",
+      "name": "Cambiar turno conserva historial y alcance, consulta no depende de estar de turno",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-031",
+      "criterion": "CA01",
+      "name": "Rol derivado de relación de cuenta y negocio",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-031",
+      "criterion": "CA02",
+      "name": "Acciones administrativas rechazan colaborador aunque invoque API",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-031",
+      "criterion": "CA03",
+      "name": "Cambio de negocio o periodo no eleva rol ni mezcla datos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-032",
+      "criterion": "CA01",
+      "name": "Permisos distintos hoy semana mes",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-032",
+      "criterion": "CA02",
+      "name": "Periodos ajenos bloqueados en consulta detalle resumen CSV",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-032",
+      "criterion": "CA03",
+      "name": "Reducir alcance no altera registros",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-033",
+      "criterion": "CA01",
+      "name": "Día semana mes rango y periodos anteriores",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-033",
+      "criterion": "CA02",
+      "name": "Rango y cantidad calculados desde datos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-033",
+      "criterion": "CA03",
+      "name": "Periodo vacío sin registros inventados",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-034",
+      "criterion": "CA01",
+      "name": "Cantidad y suma iniciales y tras nuevo evento",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-034",
+      "criterion": "CA02",
+      "name": "Avisos sin monto cuentan sin añadir dinero",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-034",
+      "criterion": "CA03",
+      "name": "Resumen y CSV usan mismos filtros, sin saldo bancario",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-036",
+      "criterion": "CA01",
+      "name": "Última conexión solo tras comunicación virtual",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-036",
+      "criterion": "CA02",
+      "name": "Contador enviados separado de confirmados",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-036",
+      "criterion": "CA03",
+      "name": "Desconexión y silencio conservan último dato sin inventar recepción",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-037",
+      "criterion": "CA01",
+      "name": "Código temporal de Box virtual sin vincular",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-037",
+      "criterion": "CA02",
+      "name": "Vista previa, cancelar, confirmar; solo administrador",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-037",
+      "criterion": "CA03",
+      "name": "Vacío inválido vencido usado y otro local rechazados",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-039",
+      "criterion": "CA01",
+      "name": "Intervalo horario combinado con monto nombre y fuente",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-039",
+      "criterion": "CA02",
+      "name": "Separados incluso con misma hora y monto",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-039",
+      "criterion": "CA03",
+      "name": "Quitar horas restaura el mismo periodo",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-040",
+      "criterion": "CA01",
+      "name": "Nombre leído tolerante a tilde",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-040",
+      "criterion": "CA02",
+      "name": "Resultado conserva monto y hora",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-040",
+      "criterion": "CA03",
+      "name": "Sin nombre no se asigna nombre nuevo",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-041",
+      "criterion": "CA01",
+      "name": "Fuentes configuradas por negocio",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-041",
+      "criterion": "CA02",
+      "name": "Solo fuente elegida, incierto no se atribuye",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-041",
+      "criterion": "CA03",
+      "name": "Quitar filtro recupera inciertos",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-042",
+      "criterion": "CA01",
+      "name": "Hoy solo negocio autorizado",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-042",
+      "criterion": "CA02",
+      "name": "Datos conservados y aviso tras alerta omitida disponible",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-042",
+      "criterion": "CA03",
+      "name": "Otros días según permiso y revocación bloquea",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-043",
+      "criterion": "CA01",
+      "name": "Cantidad y suma por Yape y Plin",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-043",
+      "criterion": "CA02",
+      "name": "Desconocidos separados sin atribución ni monto inventado",
+      "status": "PASS"
+    },
+    {
+      "hu": "HU-043",
+      "criterion": "CA03",
+      "name": "Periodo y filtros recalculan sumas de avisos",
+      "status": "PASS"
+    },
+    {
+      "hu": "TRANSVERSAL",
+      "criterion": "Persistencia",
+      "name": "Recarga y restauración de estado",
+      "status": "PASS"
+    },
+    {
+      "hu": "TRANSVERSAL",
+      "criterion": "Persistencia",
+      "name": "Guardado no disponible y JSON corrupto informados",
+      "status": "PASS"
+    },
+    {
+      "hu": "TRANSVERSAL",
+      "criterion": "Aislamiento",
+      "name": "Eventos mismo ID en distintos negocios son independientes",
+      "status": "PASS"
+    },
+    {
+      "hu": "TRANSVERSAL",
+      "criterion": "CSV",
+      "name": "Protección de fórmulas y comillas",
+      "status": "PASS"
+    }
+  ]
+}

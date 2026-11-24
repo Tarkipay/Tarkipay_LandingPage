@@ -4,6 +4,31 @@
    ========================================================================== */
 
 /* Demo producto: capa local. Mantiene DOM funcional, estados y contratos originales. */
+#demo .demo-identities{display:flex;flex-wrap:wrap;align-items:center;gap:8px;max-width:100%}
+#demo dialog{border:1px solid #DFDDE9;border-radius:12px;padding:24px;max-width:min(480px,calc(100% - 32px));margin:auto;color:#201B35;background:#F6F8FC;font:inherit;line-height:1.7}
+#demo dialog::backdrop{background:#21153699}
+#demo .demo-identities label{font-size:12px;color:#fff}
+#demo .demo-identities select,#demo #demo-event-mode{max-width:100%;min-width:0;min-height:44px;border-radius:7px;padding:8px;font:inherit;font-size:13px}
+#demo .demo-join,#demo .demo-own-permissions{color:#F6F8FC;padding:16px 28px;margin:0;font-size:13px;line-height:1.7;overflow-wrap:anywhere}
+#demo .demo-join summary{cursor:pointer;min-height:44px;align-content:center}
+#demo .demo-join .form-stack{max-width:420px}
+#demo .demo-join input{color:#201B35}
+#demo fieldset{border:1px solid #DFDDE9;border-radius:7px;padding:12px;min-width:0}
+#demo legend{font-size:12px;padding:0 4px}
+#demo .wallet-breakdown{display:flex;flex-wrap:wrap;gap:24px;padding-block:12px;font-size:13px;font-variant-numeric:tabular-nums}
+#demo .wallet-breakdown p{margin:0}
+#demo .compact-item>div{min-width:0;overflow-wrap:anywhere}
+#demo .compact-item p{font-size:12px;line-height:1.8}
+#demo :focus-visible{outline:3px solid #5B3DF5;outline-offset:3px}
+#demo .sim-top-controls :focus-visible{outline-color:#16C8C0}
+#demo .check-label{min-height:44px}
+#demo .cierre-controls{flex-wrap:wrap;max-width:100%;gap:8px}
+#demo .cierre-controls input{max-width:100%;min-width:0;min-height:44px;font:inherit}
+#demo .demo-intro{flex-wrap:wrap}
+#demo .demo-intro p{flex:1;min-width:200px}
+#demo input,#demo select{caret-color:#5B3DF5}
+#demo [hidden]{display:none!important}
+@media(max-width:480px){#demo .demo-identities{display:grid;grid-template-columns:1fr;width:100%}#demo .demo-identities select{width:100%;font-size:16px}#demo .compact-item{flex-wrap:wrap}#demo .form-group input,#demo .form-group select{font-size:16px}#demo .demo-join,#demo .demo-own-permissions{padding:16px}#demo .wallet-breakdown{gap:16px}}
 #demo{--demo-ink:#201B35;--demo-muted:#646176;--demo-line:#DFDDE9;--demo-surface:#F6F8FC;--demo-night:#211536;--demo-purple:#5B3DF5;--demo-accent:#16C8C0;background:#F6F8FC;padding-block:100px}
 #demo>.container{max-width:1360px;padding-inline:40px}
 #demo>.container>.section-header{max-width:none;text-align:left;margin:0 0 30px;display:grid;grid-template-columns:1.1fr .9fr;align-items:end;gap:60px}

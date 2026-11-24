@@ -3,10 +3,10 @@
   <div class="container">
     <div class="section-header">
       <h2>Pruébalo en tu mostrador.</h2>
-      <p>Simula un aviso, cambia de rol y explora la venta completa. Todo ocurre en este navegador.</p>
+      <p>Simula un aviso, elige una identidad ficticia y explora la venta completa. Todo ocurre en este navegador.</p>
     </div>
 
-    <div class="demo-intro"><p><strong>Tu mostrador, en modo demo.</strong><br>Datos de ejemplo, sin conexión real a billeteras ni dispositivos. Se reinicia al recargar.</p><button type="button" class="btn btn-secondary" id="btn-toggle-personalization" aria-expanded="false" aria-controls="demo-personalization">Personalizar mi negocio</button></div>
+    <div class="demo-intro"><p><strong>Tu mostrador, en modo demo.</strong><br>Datos de ejemplo, sin conexión real a billeteras ni dispositivos. Los cambios se guardan en este navegador.</p><button type="button" class="btn btn-secondary" id="btn-toggle-personalization" aria-expanded="false" aria-controls="demo-personalization">Personalizar mi negocio</button></div>
     <div id="demo-personalization" class="hidden">
       <!-- Tarjeta Interactiva de Bienvenida en el Hero -->
       <div class="hero-card-wrapper">
@@ -53,7 +53,7 @@
             </div>
 
             <button type="submit" class="btn btn-primary full-width">
-              Aplicar nombre en la demostración
+              Guardar perfil del negocio
             </button>
             <div id="feedback-config-negocio" class="alert-box success hidden" role="status">
               ¡Listo! La demostración interactiva ahora está configurada para tu negocio.
@@ -364,7 +364,7 @@
               Probar lectura de notificaciones del receptor
             </button>
             <div id="source-test-feedback" class="alert-box success hidden mt-12" role="status">
-              Permiso de lectura verificado correctamente. (Esta comprobación técnica no genera un cobro ficticio ni altera el total del día).
+              Esta demo administra fuentes ficticias; no comprueba lectura Android.
             </div>
 
             <h4 class="mt-24 mb-12">Dispositivos con sesión iniciada</h4>
@@ -378,8 +378,8 @@
             <div class="box-monitor-card">
               <div>
                 <span class="tag-step">ESTADO DEL DISPOSITIVO EN MOSTRADOR</span>
-                <h4 id="box-connection-title">Conectado · 3 avisos enviados hoy</h4>
-                <p id="box-connection-sub">Última sincronización: 14:33 · Tono Campana · Volumen 60%</p>
+                <h4 id="box-connection-title">Sin Box vinculado</h4>
+                <p id="box-connection-sub">Sin comunicación física ni virtual registrada.</p>
               </div>
               <div class="box-pulse-indicator"></div>
             </div>
