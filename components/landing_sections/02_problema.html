@@ -1,31 +1,145 @@
-<section id="problema" class="section problema-section">
+<!-- ================= 02. EL PROBLEMA ================= -->
+<section id="problema" class="section">
   <div class="container">
-    <div class="section-header text-center">
-      <span class="section-tag">El Problema</span>
-      <h2 class="section-title">Evita estafas y esperas en caja</h2>
-      <p class="section-description">
-        Cobrar por billeteras digitales y transferencias suele causar incertidumbre, demoras e intentos de fraude con comprobantes falsos.
-      </p>
+    <div class="tp-section-head tp-head-split">
+      <h2>La fila avanza.<br>Las dudas, no.</h2>
+      <p>Cuando revisar un pago frena la atención, todo el mostrador lo siente.</p>
     </div>
 
-    <div class="cards-grid">
-      <div class="feature-card alert-card">
-        <div class="card-icon">⚠️</div>
-        <h3>Comprobantes falsos</h3>
-        <p>Capturas de pantalla adulteradas que simulan pagos legítimos y generan pérdidas directas en tu negocio.</p>
+    <!-- Carrusel interactivo de los 4 escenarios de fricción -->
+    <div class="tp-problem-carousel" data-problem-carousel>
+      <div class="tp-carousel-topbar">
+        <div class="tp-carousel-tabs" role="tablist" aria-label="Escenarios de fricción en caja">
+          <button type="button" class="tp-carousel-tab active" role="tab" aria-selected="true" data-slide="0">
+            <span>01</span> Montos iguales
+          </button>
+          <button type="button" class="tp-carousel-tab" role="tab" aria-selected="false" data-slide="1">
+            <span>02</span> Pausas en caja
+          </button>
+          <button type="button" class="tp-carousel-tab" role="tab" aria-selected="false" data-slide="2">
+            <span>03</span> Dueño al teléfono
+          </button>
+          <button type="button" class="tp-carousel-tab" role="tab" aria-selected="false" data-slide="3">
+            <span>04</span> Aviso demorado
+          </button>
+        </div>
+
+        <div class="tp-carousel-arrows">
+          <button type="button" class="tp-carousel-btn" data-prev aria-label="Escenario anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button type="button" class="tp-carousel-btn" data-next aria-label="Siguiente escenario">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <div class="feature-card alert-card">
-        <div class="card-icon">⏳</div>
-        <h3>Colas y demoras en caja</h3>
-        <p>Clientes esperando mientras el cajero llama o envía mensajes al dueño para verificar si el dinero ingresó a la cuenta.</p>
+      <div class="tp-carousel-viewport">
+        <div class="tp-carousel-track" data-track>
+          <!-- SLIDE 1: PS01 -->
+          <article class="tp-problem-slide active" data-ps="PS01">
+            <div class="tp-slide-visual tp-duplicate-notices">
+              <div class="tp-little-notice">
+                <span class="tp-wallet-letter">Y</span>
+                <span>María López<small>Yape · 14:32</small></span>
+                <strong>S/ 20.00</strong>
+              </div>
+              <div class="tp-little-notice">
+                <span class="tp-wallet-letter">P</span>
+                <span>Carlos Ruiz<small>Plin · 14:29</small></span>
+                <strong>S/ 20.00</strong>
+              </div>
+              <span class="tp-doubt-label">Mismo monto. ¿De quién es cada abono?</span>
+            </div>
+            <div class="tp-slide-copy">
+              <span class="tp-slide-badge">Escenario 01 · Verificación</span>
+              <h3>Dos avisos. Un mismo monto.</h3>
+              <p>Los pagos consecutivos se confunden con facilidad. Nombre, hora y billetera ayudan a distinguir cada
+                abono antes de entregar el pedido.</p>
+            </div>
+          </article>
+
+          <!-- SLIDE 2: PS02 -->
+          <article class="tp-problem-slide" data-ps="PS02">
+            <div class="tp-slide-visual tp-interruption">
+              <div class="tp-serving-line"><span>Atender</span><span>Entregar</span></div>
+              <div class="tp-pause-token" aria-hidden="true"><i></i><i></i></div>
+              <span class="tp-interruption-label">Desbloquear. Buscar. Volver.</span>
+            </div>
+            <div class="tp-slide-copy">
+              <span class="tp-slide-badge">Escenario 02 · Continuidad</span>
+              <h3>Una pausa en cada venta.</h3>
+              <p>Soltar los productos para revisar el celular entre varias billeteras corta el ritmo cuando hay clientes
+                esperando en la fila.</p>
+            </div>
+          </article>
+
+          <!-- SLIDE 3: PS03 -->
+          <article class="tp-problem-slide" data-ps="PS03">
+            <div class="tp-slide-visual tp-owner-chat">
+              <span>¿Puedes revisar este pago?</span>
+              <span>Lo reviso en mi billetera.</span>
+              <small>Mostrador <i aria-hidden="true"></i> Titular</small>
+            </div>
+            <div class="tp-slide-copy">
+              <span class="tp-slide-badge">Escenario 03 · Delegación</span>
+              <h3>El dueño, siempre al teléfono.</h3>
+              <p>Si solo el titular puede ver los pagos, el equipo depende de llamadas y mensajes para seguir vendiendo
+                sin exponer claves.</p>
+            </div>
+          </article>
+
+          <!-- SLIDE 4: HU-007 / HU-008 / HU-035 / HU-047 -->
+          <article class="tp-problem-slide" data-hu="HU-007 HU-008 HU-035 HU-047">
+            <div class="tp-slide-visual tp-silent-visual">
+              <div class="tp-silent-pill">
+                <span class="tp-silent-dot"></span>
+                <span>Sin aviso nuevo · Sinc. 14:32</span>
+              </div>
+              <div class="tp-silent-card">
+                <div class="tp-silent-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                    <line x1="2" y1="2" x2="22" y2="22" />
+                  </svg>
+                </div>
+                <div>
+                  <strong>¿Pagó pero no sonó nada?</strong>
+                  <small>Aviso demorado o teléfono sin red</small>
+                </div>
+                <span class="tp-state tp-state-warning">Revisar billetera</span>
+              </div>
+            </div>
+            <div class="tp-slide-copy">
+              <span class="tp-slide-badge">Escenario 04 · Confiabilidad</span>
+              <h3>El silencio no significa falta de pago.</h3>
+              <p>Si una notificación se demora o el celular receptor pierde red, TarkiPay avisa al instante y guía al
+                equipo para contrastar directo en la billetera.</p>
+              <a href="#demo" class="tp-inline-action">Probar caída de red en la demo →</a>
+            </div>
+          </article>
+        </div>
       </div>
 
-      <div class="feature-card alert-card">
-        <div class="card-icon">🔒</div>
-        <h3>Riesgo de seguridad bancaria</h3>
-        <p>Tener que compartir credenciales o accesos directos a la cuenta bancaria con tus colaboradores para que puedan verificar pagos.</p>
+      <div class="tp-carousel-dots" aria-hidden="true">
+        <button type="button" class="tp-dot active" data-dot="0"></button>
+        <button type="button" class="tp-dot" data-dot="1"></button>
+        <button type="button" class="tp-dot" data-dot="2"></button>
+        <button type="button" class="tp-dot" data-dot="3"></button>
       </div>
     </div>
+
+    <p class="tp-safety-inline" data-hu="HU-004">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <path d="M12 3 2 21h20L12 3Z" />
+        <path d="M12 9v5m0 3v1" />
+      </svg>
+      <span>Un aviso o captura no confirma el abono. Ante dudas, revisa la billetera receptora.</span>
+    </p>
   </div>
 </section>

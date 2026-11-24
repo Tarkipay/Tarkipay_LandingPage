@@ -1,72 +1,260 @@
 /* ==========================================================================
-   TarkiPay - Navbar Component (navbar.css)
+   NAVBAR.CSS - HEADER LIQUID GLASS Y MENÚ RESPONSIVE
    ========================================================================== */
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--color-border);
+  width: min(1160px, calc(100% - 32px));
+  border-radius: 999px;
+
+  background: linear-gradient(180deg,
+      rgba(29, 19, 66, 0.78) 0%,
+      rgba(19, 13, 42, 0.72) 100%);
+  backdrop-filter: blur(22px) saturate(185%) contrast(106%);
+  -webkit-backdrop-filter: blur(22px) saturate(185%) contrast(106%);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-top-color: rgba(255, 255, 255, 0.44);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 14px 34px -8px rgba(10, 6, 28, 0.55),
+    0 2px 6px rgba(10, 6, 28, 0.25),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.36),
+    inset 0 -1px 0 0 rgba(115, 85, 255, 0.22);
+
+  transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.navbar-container {
+.site-header .nav-container {
+  min-height: 64px;
+  padding: 0 14px 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
-}
-
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
+  gap: 16px;
 }
 
 .brand-logo {
-  height: 36px;
-  width: auto;
-}
-
-.brand-name {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--color-pulso-indigo);
-  letter-spacing: -0.02em;
-}
-
-.brand-name span {
-  color: var(--color-turquesa-dark);
-}
-
-.navbar-links {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 2rem;
-}
-
-.nav-link {
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: var(--color-text-main);
-  transition: var(--transition-smooth);
+  flex-shrink: 0;
 }
 
-.nav-link:hover {
-  color: var(--color-pulso-indigo);
+.brand-logo-horizontal {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
 }
 
-.navbar-actions {
+.main-nav {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
 }
 
-@media (max-width: 768px) {
-  .navbar-links {
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .nav-item {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  text-decoration: none;
+  color: rgba(242, 237, 255, 0.9) !important;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-header .nav-item:hover {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.site-header .nav-item.nav-highlight {
+  color: var(--teal-bright) !important;
+  background: rgba(22, 200, 192, 0.12);
+  border-color: rgba(22, 200, 192, 0.26);
+}
+
+.site-header .nav-item.nav-highlight:hover {
+  background: rgba(22, 200, 192, 0.20);
+  border-color: rgba(22, 200, 192, 0.42);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.site-header .btn-primary {
+  background-color: #FFFFFF;
+  color: #35207F;
+  border-color: transparent;
+}
+
+.site-header .btn-primary:hover {
+  background: #FFFFFF;
+  color: #1D104A;
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 18px rgba(115, 85, 255, 0.48),
+    inset 0 1px 0 #FFFFFF;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.mobile-menu-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ==========================================================================
+   ADAPTACIÓN RESPONSIVE MÓVIL (PANEL DESPLEGABLE LIQUID GLASS)
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .site-header {
+    top: 10px;
+    width: calc(100% - 24px);
+  }
+
+  .site-header .nav-container {
+    padding: 0 12px 0 18px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .main-nav {
     display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    border-radius: 26px;
+    background: linear-gradient(180deg,
+        rgba(34, 21, 78, 0.92) 0%,
+        rgba(20, 13, 44, 0.95) 100%);
+    backdrop-filter: blur(26px) saturate(190%);
+    -webkit-backdrop-filter: blur(26px) saturate(190%);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-top-color: rgba(255, 255, 255, 0.42);
+    box-shadow:
+      0 24px 48px rgba(8, 5, 22, 0.65),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    flex-direction: column;
+    padding: 18px;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .main-nav.active,
+  .main-nav.is-open {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .nav-list li {
+    width: 100%;
+  }
+
+  .site-header .nav-item {
+    display: flex;
+    width: 100%;
+    padding: 11px 16px;
+    font-size: 15px;
+    border-radius: 14px;
+  }
+
+  .nav-actions {
+    width: 100%;
+    padding-top: 6px;
+  }
+
+  .nav-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1080px) {
+
+  /* Evita que la cápsula recorte el menú que cuelga debajo */
+  .site-header,
+  .site-header .nav-container {
+    overflow: visible !important;
+  }
+
+  .site-header .main-nav.is-open,
+  .site-header .main-nav.active {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: calc(100% + 10px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    z-index: 9999 !important;
+  }
+
+  .site-header .main-nav.is-open .nav-list,
+  .site-header .main-nav.active .nav-list {
+    display: flex !important;
+    flex-direction: column !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }

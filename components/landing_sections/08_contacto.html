@@ -1,0 +1,76 @@
+<!-- ================= 08. CTA FINAL Y FORMULARIO DE CONTACTO ================= -->
+<section id="contacto" class="section" aria-labelledby="contact-title">
+  <div class="container contact-composition">
+    <h2 id="contact-title">Hablemos<span aria-hidden="true">.</span></h2>
+    <div class="contact-layout">
+      <div class="contact-intro">
+        <h3>Tu negocio tiene <br>su propia historia.</h3>
+        <p>Cuéntanos cómo atiendes en tu mostrador. Explora cómo TarkiPay puede adaptarse a tu ritmo de trabajo.</p>
+        <ul class="contact-promises">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="m5 12 4 4L19 6" />
+            </svg>Sin acceso a tus claves</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="m5 12 4 4L19 6" />
+            </svg>Para ti y tu equipo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="m5 12 4 4L19 6" />
+            </svg>Demo guiada y personalizada</li>
+        </ul>
+        <a class="contact-demo-link" href="#demo"><span>Ver demo antes <span aria-hidden="true">→</span></span></a>
+      </div>
+      <div class="contact-form-surface">
+        <div class="contact-form-heading">
+          <h3>Cuéntanos sobre tu negocio</h3>
+          <p id="contact-purpose">Para consultar o explorar una posible demo.</p>
+        </div>
+        <form id="form-contacto" class="form-stack" novalidate aria-describedby="contact-local-note">
+          <p class="contact-required-note">Solo los campos con * son obligatorios.</p>
+          <div class="contact-field-grid">
+            <div class="form-group">
+              <label for="contact-name">Nombre completo *</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" placeholder="Tu nombre y apellido"
+                required aria-describedby="err-contact-name" />
+              <span class="field-error hidden" id="err-contact-name">Escribe tu nombre completo (al menos 2
+                caracteres).</span>
+            </div>
+            <div class="form-group">
+              <label for="contact-business">Rubro o nombre del negocio *</label>
+              <input type="text" id="contact-business" name="business" autocomplete="organization"
+                placeholder="Ej. Bodega San Martín" required aria-describedby="err-contact-business" />
+              <span class="field-error hidden" id="err-contact-business">Indica el rubro o nombre de tu negocio.</span>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Correo electrónico *</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="nombre@ejemplo.com"
+                required aria-describedby="err-contact-email" />
+              <span class="field-error hidden" id="err-contact-email">Ingresa un correo con formato
+                nombre@ejemplo.com.</span>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Celular <span>(opcional)</span></label>
+              <input type="tel" id="contact-phone" name="phone" autocomplete="tel-national" inputmode="numeric"
+                placeholder="9 dígitos" maxlength="9" aria-describedby="err-contact-phone" />
+              <span class="field-error hidden" id="err-contact-phone">Usa 9 dígitos o deja el campo vacío.</span>
+            </div>
+          </div>
+          <div class="form-group contact-message-group">
+            <label for="contact-message">¿Qué te gustaría saber? <span>(opcional)</span></label>
+            <textarea id="contact-message" name="message" rows="2" placeholder="Cuéntanos tu consulta…"
+              aria-describedby="err-contact-message"></textarea>
+            <span class="field-error hidden" id="err-contact-message">Revisa tu consulta.</span>
+          </div>
+          <div class="contact-form-bottom">
+            <p id="contact-local-note">La validación es local. Tu consulta aún no se envía ni se guarda.</p>
+            <button type="submit" class="btn btn-primary">Validar consulta <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M4 12h15m-6-6 6 6-6 6" />
+              </svg></button>
+          </div>
+          <div id="contact-success-msg" class="alert-box success hidden" role="status">Datos validados. No se ha enviado
+            ni guardado tu información.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+# Carpeta excluida del repositorio
+.agents/
+
+# Archivos de sistema y dependencias comunes (opcional)
+.DS_Store
+Thumbs.db
+node_modules/
+.env

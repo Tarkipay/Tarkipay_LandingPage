@@ -1,73 +1,504 @@
-/* ==========================================================================
-   TarkiPay - Contacto Page Specific Styles (contacto.css)
-   ========================================================================== */
-
-.contacto-page {
-  padding: 4rem 0 6rem;
+/* Contacto: cierre tipográfico. Todas las reglas están acotadas a esta sección. */
+#contacto {
+    padding: 76px 0 90px;
+    background: #17102F;
+    color: #F6F8FC;
+    position: relative;
+    isolation: isolate
 }
 
-.contacto-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: start;
+#contacto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(ellipse at 0 90%, #39217980, transparent 65%);
+    pointer-events: none
 }
 
-.contacto-info h1 {
-  font-size: 2.75rem;
-  font-weight: 800;
-  color: var(--color-indigo-dark);
-  line-height: 1.2;
-  margin-bottom: 1.25rem;
+#contacto>.contact-composition {
+    display: block;
+    padding: 0 32px;
+    margin-inline: auto;
+    max-width: 1280px;
+    border-radius: 0;
+    background: none;
+    color: inherit
 }
 
-.contacto-info p {
-  color: var(--color-text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
+#contacto #contact-title {
+    font-size: clamp(100px, 15.1vw, 210px);
+    font-weight: 800;
+    letter-spacing: -.04em;
+    line-height: 1.02;
+    max-width: none;
+    margin: 0;
+    position: relative;
+    color: #F6F8FC
 }
 
-.contacto-methods {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+#contacto #contact-title>span {
+    color: #16C8C0
 }
 
-.contact-method-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
+#contacto .contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.25fr);
+    gap: 64px;
+    align-items: start;
+    margin-top: 24px;
+    position: relative
 }
 
-.contact-icon {
-  font-size: 1.5rem;
-  background-color: rgba(0, 210, 180, 0.15);
-  padding: 0.75rem;
-  border-radius: var(--radius-sm);
+#contacto .contact-intro {
+    padding-top: 156px;
+    max-width: 330px
 }
 
-.contact-method-item h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-indigo-dark);
+#contacto .contact-intro h3 {
+    font-size: clamp(24px, 2.4vw, 32px);
+    font-weight: 500;
+    letter-spacing: -.025em;
+    line-height: 1.3;
+    margin: 0 0 25px;
+    color: #F6F8FC
 }
 
-.contact-method-item span {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
+#contacto .contact-intro>p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #D6CBEA;
+    margin: 0;
+    max-width: 30ch
 }
 
-.contacto-card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  box-shadow: var(--shadow-md);
+#contacto .contact-promises {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+    display: grid;
+    gap: 17px
 }
 
-@media (max-width: 900px) {
-  .contacto-layout {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
+#contacto .contact-promises li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #F6F8FC
+}
+
+#contacto .contact-promises svg {
+    width: 19px;
+    height: 19px;
+    color: #16C8C0;
+    flex-shrink: 0
+}
+
+#contacto .contact-demo-link {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    align-items: start;
+    color: #D6CBEA;
+    font-size: 12px;
+    text-decoration: none;
+    margin-top: 38px;
+    line-height: 1.5
+}
+
+#contacto .contact-demo-link>span {
+    color: #F6F8FC;
+    font-size: 14px;
+    border-bottom: 1px solid #88779E;
+    padding-bottom: 5px;
+    transition: border-color .2s
+}
+
+#contacto .contact-demo-link:hover>span {
+    border-color: #16C8C0
+}
+
+#contacto .contact-form-surface {
+    background: #F6F8FC;
+    color: #201B35;
+    padding: 42px 44px 36px;
+    border-radius: 16px;
+    box-shadow: 0 24px 70px #09051745, 0 -8px 70px #5B3DF51C
+}
+
+#contacto .contact-form-heading {
+    padding-bottom: 22px;
+    border-bottom: 1px solid #DADCE8
+}
+
+#contacto .contact-form-heading h3 {
+    font-size: 23px;
+    line-height: 1.3;
+    letter-spacing: -.025em;
+    margin: 0 0 8px;
+    color: #201B35
+}
+
+#contacto .contact-form-heading p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #5D6072;
+    margin: 0
+}
+
+#contacto .form-stack {
+    display: flex !important;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+#contacto .contact-required-note {
+    margin: 0;
+    color: #5D6072;
+    font-size: 12px;
+    line-height: 1.5
+}
+
+#contacto .contact-field-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 25px 24px
+}
+
+#contacto .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 0;
+    min-width: 0
+}
+
+#contacto .form-group label {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #201B35
+}
+
+#contacto .form-group label span {
+    font-weight: 400;
+    color: #5D6072
+}
+
+#contacto .form-group input,
+#contacto .form-group textarea {
+    border: 0;
+    border-bottom: 1px solid #9694AA;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+    padding: 10px 0 12px;
+    font: inherit;
+    font-size: 14px;
+    color: #201B35;
+    caret-color: #5B3DF5;
+    transition: border-color .2s, background .2s;
+    min-height: 44px
+}
+
+#contacto .form-group textarea {
+    resize: vertical;
+    min-height: 76px
+}
+
+#contacto .form-group input::placeholder,
+#contacto .form-group textarea::placeholder {
+    color: #69677D;
+    opacity: 1
+}
+
+#contacto .form-group input:hover,
+#contacto .form-group textarea:hover {
+    border-color: #5B3DF5
+}
+
+#contacto .form-group input:focus,
+#contacto .form-group textarea:focus {
+    outline: 2px solid #5B3DF5;
+    outline-offset: 5px;
+    border-color: #5B3DF5;
+    background: #F0EDFF
+}
+
+#contacto .form-group .input-invalid {
+    border-color: #B42318;
+    background: #FEF2F2
+}
+
+#contacto .field-error {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #B42318
+}
+
+#contacto .contact-form-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    margin-top: 2px
+}
+
+#contacto #contact-local-note {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #5D6072;
+    max-width: 28ch;
+    margin: 0
+}
+
+#contacto #contact-local-note strong {
+    font-weight: 600;
+    color: #201B35;
+    display: block
+}
+
+#contacto .contact-form-bottom .btn {
+    flex-shrink: 0;
+    gap: 16px;
+    min-height: 52px;
+    padding: 15px 24px;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: 9px;
+    background: #5B3DF5;
+    color: white
+}
+
+#contacto .contact-form-bottom .btn:hover {
+    background: #472AD9
+}
+
+#contacto .contact-form-bottom svg {
+    width: 20px;
+    height: 20px;
+    transition: transform .2s
+}
+
+#contacto .contact-form-bottom .btn:hover svg {
+    transform: translateX(3px)
+}
+
+#contacto a:focus-visible,
+#contacto button:focus-visible {
+    outline: 3px solid #16C8C0;
+    outline-offset: 5px
+}
+
+#contacto ::selection {
+    background: #D8D0FF;
+    color: #17102F
+}
+
+#contacto #contact-success-msg {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6
+}
+
+@media(max-width:1100px) {
+    #contacto .contact-layout {
+        gap: 36px;
+        grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+        margin-top: 24px
+    }
+
+    #contacto .contact-form-surface {
+        padding: 30px
+    }
+
+    #contacto .contact-field-grid {
+        grid-template-columns: 1fr;
+        gap: 18px
+    }
+
+    #contacto .contact-intro {
+        padding-top: 130px
+    }
+
+    #contacto .contact-form-bottom {
+        align-items: start;
+        flex-direction: column
+    }
+
+    #contacto #contact-local-note {
+        max-width: 45ch
+    }
+}
+
+@media(max-width:800px) {
+    #contacto {
+        padding: 62px 0
+    }
+
+    #contacto>.contact-composition {
+        padding-inline: 28px
+    }
+
+    #contacto #contact-title {
+        font-size: clamp(88px, 16.6vw, 132px)
+    }
+
+    #contacto .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin-top: 28px
+    }
+
+    #contacto .contact-intro {
+        padding-top: 0;
+        max-width: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 30px
+    }
+
+    #contacto .contact-intro h3 {
+        grid-row: 1/3;
+        font-size: 28px;
+        margin-bottom: 0
+    }
+
+    #contacto .contact-intro>p {
+        font-size: 14px
+    }
+
+    #contacto .contact-promises {
+        grid-column: 1/-1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 26px;
+        margin-top: 22px
+    }
+
+    #contacto .contact-demo-link {
+        grid-column: 1/-1;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 12px;
+        margin-top: 23px
+    }
+
+    #contacto .contact-form-surface {
+        padding: 32px
+    }
+
+    #contacto .contact-field-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 24px
+    }
+
+    #contacto .contact-form-bottom {
+        flex-direction: row;
+        align-items: center
+    }
+
+    #contacto #contact-local-note {
+        max-width: 29ch
+    }
+}
+
+@media(max-width:480px) {
+    #contacto {
+        padding: 45px 0 48px
+    }
+
+    #contacto>.contact-composition {
+        padding-inline: 22px
+    }
+
+    #contacto #contact-title {
+        font-size: clamp(52px, 16.6vw, 80px);
+        letter-spacing: -.04em
+    }
+
+    #contacto .contact-layout {
+        margin-top: 28px;
+        gap: 30px
+    }
+
+    #contacto .contact-intro {
+        display: block
+    }
+
+    #contacto .contact-intro h3 {
+        font-size: 25px;
+        margin-bottom: 15px
+    }
+
+    #contacto .contact-intro h3 br {
+        display: none
+    }
+
+    #contacto .contact-intro>p {
+        max-width: 36ch
+    }
+
+    #contacto .contact-promises {
+        display: grid;
+        gap: 11px;
+        margin-top: 22px
+    }
+
+    #contacto .contact-demo-link {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        margin-top: 24px
+    }
+
+    #contacto .contact-form-surface {
+        padding: 26px 22px;
+        border-radius: 12px
+    }
+
+    #contacto .contact-form-heading h3 {
+        font-size: 22px
+    }
+
+    #contacto .contact-field-grid {
+        grid-template-columns: 1fr;
+        gap: 22px
+    }
+
+    #contacto .form-group input,
+    #contacto .form-group textarea {
+        font-size: 16px
+    }
+
+    #contacto .form-stack {
+        gap: 22px
+    }
+
+    #contacto .contact-form-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px
+    }
+
+    #contacto #contact-local-note {
+        max-width: none
+    }
+
+    #contacto .contact-form-bottom .btn {
+        justify-content: space-between
+    }
+
+    #contacto .form-group label {
+        font-size: 13px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    #contacto * {
+        transition: none !important
+    }
 }

@@ -1,0 +1,66 @@
+<!-- ================= MODAL DE PRIVACIDAD Y PERMISOS ================= -->
+<div id="modal-permisos" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-permisos-title">
+  <div class="modal-card">
+    <div class="modal-header">
+      <div class="modal-brand-row">
+        <img 
+          src="assets/img/1.png" 
+          alt="Isotipo TarkiPay" 
+          class="modal-isotipo" 
+        />
+        <h3 id="modal-permisos-title">Cómo protegemos tu cuenta y tu privacidad</h3>
+      </div>
+      <button type="button" class="btn-icon-close" id="btn-close-modal-permisos" aria-label="Cerrar ventana">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="info-item-row">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+          </svg>
+        </div>
+        <div>
+          <strong>¿Qué información utiliza TarkiPay?</strong>
+          <p>Únicamente el permiso de lectura de notificaciones de Android en el teléfono receptor para identificar el monto, la hora, el nombre del emisor y la billetera (Yape o Plin) cuando llega un aviso de pago.</p>
+        </div>
+      </div>
+      <div class="info-item-row">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <strong>¿Qué información queda estrictamente fuera?</strong>
+          <p>Claves secretas, saldos bancarios, movimientos anteriores a la activación y notificaciones de cualquier otra aplicación personal o de mensajería.</p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" id="btn-reject-permisos">Simular permiso desactivado</button>
+      <button type="button" class="btn btn-primary" id="btn-accept-permisos">Entendido</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL LEGAL (TÉRMINOS Y PRIVACIDAD) ================= -->
+<div id="modal-legal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-legal-title">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="modal-legal-title">Información Legal</h3>
+      <button type="button" class="btn-icon-close" id="btn-close-modal-legal" aria-label="Cerrar ventana">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modal-legal-body"></div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" id="btn-ok-modal-legal">Cerrar</button>
+    </div>
+  </div>
+</div>

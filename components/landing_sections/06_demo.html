@@ -1,0 +1,481 @@
+<!-- ================= 06. DEMO INTERACTIVA DE LA PLATAFORMA ================= -->
+<section id="demo" class="section bg-white">
+  <div class="container">
+    <div class="section-header">
+      <h2>Pruébalo en tu mostrador.</h2>
+      <p>Simula un aviso, cambia de rol y explora la venta completa. Todo ocurre en este navegador.</p>
+    </div>
+
+    <div class="demo-intro"><p><strong>Tu mostrador, en modo demo.</strong><br>Datos de ejemplo, sin conexión real a billeteras ni dispositivos. Se reinicia al recargar.</p><button type="button" class="btn btn-secondary" id="btn-toggle-personalization" aria-expanded="false" aria-controls="demo-personalization">Personalizar mi negocio</button></div>
+    <div id="demo-personalization" class="hidden">
+      <!-- Tarjeta Interactiva de Bienvenida en el Hero -->
+      <div class="hero-card-wrapper">
+        <div class="card onboarding-preview-card">
+          <div class="card-header-bar">
+            <div class="isotipo-card-header">
+              <img 
+                src="assets/img/1.png" 
+                alt="Colibrí TarkiPay" 
+                class="hero-card-isotipo" 
+              />
+              <span class="tag-step">PRUEBA RÁPIDA</span>
+            </div>
+            <span class="status-badge positive">Sin claves bancarias</span>
+          </div>
+          <h2>Tu negocio en la demo.</h2>
+          <p class="text-muted">Personaliza los datos de ejemplo que verá tu equipo.</p>
+
+          <form id="form-config-negocio" class="form-stack" novalidate>
+            <div class="form-group">
+              <label for="input-business-name">Nombre visible del comercio *</label>
+              <input type="text" id="input-business-name" value="Bodega La Esquina" required aria-required="true" />
+              <span class="field-error hidden" id="error-business-name">Por favor, ingresa el nombre de tu negocio para continuar.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="input-owner-name">Persona responsable o titular *</label>
+              <input type="text" id="input-owner-name" value="Elena Vargas" required aria-required="true" aria-describedby="error-owner-name" />
+              <span class="field-error hidden" id="error-owner-name">Ingresa el nombre de la persona responsable.</span>
+            </div>
+
+            <div class="form-group">
+              <label>Billeteras que recibe tu negocio</label>
+              <div class="checkbox-row">
+                <label class="check-label">
+                  <input type="checkbox" id="chk-init-yape" checked />
+                  <span>Yape (Notificaciones en teléfono Android)</span>
+                </label>
+                <label class="check-label">
+                  <input type="checkbox" id="chk-init-plin" checked />
+                  <span>Plin (Notificaciones en teléfono Android)</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary full-width">
+              Aplicar nombre en la demostración
+            </button>
+            <div id="feedback-config-negocio" class="alert-box success hidden" role="status">
+              ¡Listo! La demostración interactiva ahora está configurada para tu negocio.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="sim-workspace">
+      <!-- Barra de Control Superior del Simulador -->
+      <div class="sim-top-controls" role="region" aria-label="Controles de la demostración">
+        <div class="sim-business-identity">
+          <img 
+            src="assets/img/2.png" 
+            alt="TarkiPay" 
+            class="sim-bar-logo" 
+          />
+          <div class="sim-biz-divider"></div>
+          <span class="sim-label">COMERCIO ACTIVO:</span>
+          <strong id="sim-active-business-name">Bodega La Esquina</strong>
+          <span class="connection-pill online" id="sim-connection-pill">Teléfono receptor conectado · Últ. sinc. 14:33</span>
+        </div>
+
+        <div class="sim-switches">
+          <div class="role-switcher" role="group" aria-label="Cambiar vista de usuario">
+            <button type="button" class="role-btn active" data-role="admin" id="btn-role-admin">
+              Vista Administradora (Elena)
+            </button>
+            <button type="button" class="role-btn" data-role="collab" id="btn-role-collab">
+              Vista Colaboradora (Lucía)
+            </button>
+          </div>
+
+          <button type="button" class="btn-chip" id="btn-toggle-sound" aria-pressed="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            </svg>
+            <span id="sound-status-text">Alerta sonora: Activa</span>
+          </button>
+
+          <button type="button" class="btn-chip" id="btn-toggle-connection" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+              <line x1="12" y1="20" x2="12.01" y2="20"/>
+            </svg>
+            <span id="conn-status-text">Simular caída de internet</span>
+          </button>
+
+          <button type="button" class="btn-chip primary-chip" id="btn-simulate-incoming">
+            + Simular nuevo aviso
+          </button>
+        </div>
+      </div>
+
+      <!-- Alerta de desconexión -->
+      <div id="banner-offline-alert" class="alert-banner warning hidden" role="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+        <div>
+          <strong>Sin conexión con el teléfono receptor · Lista desactualizada</strong>
+          <p>Última actualización recibida a las <span id="offline-last-time">14:33</span>. La ausencia de un aviso nuevo no significa que el cliente no haya pagado; revisa directamente la billetera receptora antes de entregar.</p>
+        </div>
+      </div>
+
+      <!-- Pestañas del Simulador -->
+      <div class="sim-tabs" role="tablist" aria-label="Vistas de la plataforma TarkiPay">
+        <button type="button" class="sim-tab active" role="tab" aria-selected="true" data-tab="tab-avisos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8m-8 4h8m-8 4h5"/></svg><span>Avisos y búsqueda</span></button>
+        <button type="button" class="sim-tab" role="tab" aria-selected="false" data-tab="tab-ventas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><path d="M4 7h16v14H4zM8 7V5a4 4 0 0 1 8 0v2m-8 5h8"/></svg><span>Ventas y consultas</span></button>
+        <button type="button" class="sim-tab admin-only-tab" role="tab" aria-selected="false" data-tab="tab-equipo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3m1-17a3 3 0 0 1 0 6m3 11v-3a6 6 0 0 0-3-5"/></svg><span>Equipo y horarios</span></button>
+        <button type="button" class="sim-tab admin-only-tab" role="tab" aria-selected="false" data-tab="tab-dispositivos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9h5v6H7zm9 1h2m-2 4h2"/></svg><span>Fuentes y TarkiBox</span></button>
+        <button type="button" class="sim-tab" role="tab" aria-selected="false" data-tab="tab-cierre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v5h5M8 13h8m-8 4h5"/></svg><span>Cierre y CSV</span></button>
+      </div>
+
+      <!-- MÓDULO 1: AVISOS Y BÚSQUEDA -->
+      <div id="tab-avisos" class="sim-panel active" role="tabpanel">
+        <div class="sim-grid-2">
+          <div class="card panel-card">
+            <div class="panel-card-header">
+              <h3>Buscar y filtrar avisos</h3>
+              <button type="button" class="btn-text" id="btn-refresh-avisos">
+                Actualizar lista ahora
+              </button>
+            </div>
+
+            <form id="form-filter-avisos" class="form-stack" novalidate>
+              <div class="form-group">
+                <label for="filter-amount">Filtrar por monto en soles</label>
+                <div class="input-with-btn">
+                  <input type="number" id="filter-amount" step="0.01" placeholder="Ej. 20.00" />
+                  <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
+                </div>
+                <span class="field-error hidden" id="error-filter-amount">Ingresa un importe mayor que cero utilizando números y hasta dos decimales.</span>
+              </div>
+
+              <div class="quick-filter-chips">
+                <button type="button" class="chip-btn" data-quick-amount="20">Ver pagos de S/ 20.00</button>
+                <button type="button" class="chip-btn" data-quick-amount="99">Probar monto sin resultados (S/ 99)</button>
+                <button type="button" class="chip-btn" data-quick-amount="-5">Probar validación de error (S/ -5)</button>
+              </div>
+
+              <div class="form-group">
+                <label for="filter-sender">Buscar por nombre recibido</label>
+                <input type="text" id="filter-sender" placeholder="Ej. María López o Carlos" />
+              </div>
+
+              <div class="form-group">
+                <label>Filtrar por billetera de origen</label>
+                <div class="segmented-buttons" id="wallet-channel-filter">
+                  <button type="button" class="seg-btn active" data-channel="all">Todas</button>
+                  <button type="button" class="seg-btn" data-channel="Yape">Yape</button>
+                  <button type="button" class="seg-btn" data-channel="Plin">Plin</button>
+                  <button type="button" class="seg-btn" data-channel="No disponible">Sin identificar</button>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-secondary full-width" id="btn-clear-all-filters">
+                Limpiar todos los filtros
+              </button>
+            </form>
+
+            <div class="guideline-note">
+              <strong>Importante durante la atención:</strong>
+              <p>Un aviso no confirma el abono. Si falta información o tienes dudas, revisa la billetera receptora.</p>
+            </div>
+          </div>
+
+          <div class="card panel-card">
+            <div class="panel-card-header">
+              <div>
+                <h3>Avisos de hoy en <span class="dynamic-biz-name">Bodega La Esquina</span></h3>
+                <p class="text-small text-muted" id="avisos-count-label">Ordenados del más reciente al más antiguo · Última consulta: 14:33</p>
+              </div>
+            </div>
+
+            <div id="avisos-list-container" class="avisos-stack" aria-live="polite"></div>
+
+            <!-- Cajón de Detalle del Aviso -->
+            <div id="aviso-detail-drawer" class="detail-drawer hidden" role="region" aria-label="Detalle del aviso seleccionado">
+              <div class="detail-drawer-header">
+                <h4>Información completa del aviso</h4>
+                <button type="button" class="btn-text" id="btn-close-detail">Cerrar detalle</button>
+              </div>
+              <div id="aviso-detail-content"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 2: ASOCIAR COBRO A VENTA Y CONSULTAS -->
+      <div id="tab-ventas" class="sim-panel" role="tabpanel">
+        <div class="sim-grid-2">
+          <div class="card panel-card">
+            <h3>Comparar y asociar aviso con venta actual</h3>
+            <p class="text-small text-muted mb-16">Compara el importe esperado con el aviso. Una coincidencia no confirma el abono.</p>
+
+            <form id="form-vincular-venta" class="form-stack" novalidate>
+              <div class="form-group">
+                <label for="sale-expected-amount">Monto esperado de la venta (S/) *</label>
+                <input type="number" id="sale-expected-amount" step="0.01" value="25.00" required />
+                <span class="field-error hidden" id="error-sale-amount">Ingresa un monto positivo mayor que cero.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="sale-select-aviso">Seleccionar aviso detectado para asociar</label>
+                <select id="sale-select-aviso"></select>
+              </div>
+
+              <div class="form-group">
+                <label for="sale-incident-note">Nota o comentario breve (opcional)</label>
+                <input type="text" id="sale-incident-note" placeholder="Ej. Cliente completó la diferencia en efectivo" />
+              </div>
+
+              <div class="button-row-2">
+                <button type="submit" class="btn btn-primary">Comparar y asociar</button>
+                <button type="button" class="btn btn-secondary" id="btn-mark-sale-pending">
+                  Dejar como pendiente
+                </button>
+              </div>
+            </form>
+
+            <div id="venta-comparison-result" class="comparison-result-box hidden" role="status"></div>
+
+            <h4 class="mt-24 mb-12">Ventas registradas en el turno</h4>
+            <div id="ventas-registered-list" class="compact-list"></div>
+          </div>
+
+          <div class="card panel-card">
+            <div class="panel-card-header">
+              <div>
+                <h3>Solicitudes de revisión al administrador</h3>
+                <p class="text-small text-muted">Envía una consulta rápida con el monto y la venta sin tener que mandar capturas por WhatsApp.</p>
+              </div>
+            </div>
+
+            <form id="form-request-review" class="form-stack mb-20" novalidate>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="req-amount">Monto a consultar (S/) *</label>
+                  <input type="number" id="req-amount" step="0.01" value="45.00" required />
+                </div>
+                <div class="form-group">
+                  <label for="req-sale-ref">Referencia de la venta *</label>
+                  <input type="text" id="req-sale-ref" value="Mostrador #08 (Transferencia interbancaria)" required />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-secondary full-width">
+                Enviar pedido de revisión a administración
+              </button>
+            </form>
+
+            <div class="segmented-buttons mb-12" id="requests-filter-tabs">
+              <button type="button" class="seg-btn active" data-req-filter="pending">Pendientes de respuesta</button>
+              <button type="button" class="seg-btn" data-req-filter="resolved">Consultas respondidas</button>
+            </div>
+
+            <div id="requests-list-container" class="compact-list" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 3: EQUIPO Y HORARIOS -->
+      <div id="tab-equipo" class="sim-panel" role="tabpanel">
+        <div class="sim-grid-2">
+          <div class="card panel-card">
+            <h3>Invitar a un colaborador al negocio</h3>
+            <p class="text-small text-muted mb-16">Explora el alcance y el horario del colaborador. Los accesos y códigos son simulados.</p>
+
+            <form id="form-invite-member" class="form-stack" novalidate>
+              <div class="form-group">
+                <label for="invite-name">Nombre completo del colaborador *</label>
+                <input type="text" id="invite-name" placeholder="Ej. Mateo Quispe" required />
+                <span class="field-error hidden" id="error-invite-name">Ingresa el nombre del integrante para generar su código.</span>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="invite-history-scope">Alcance de historial permitido</label>
+                  <select id="invite-history-scope">
+                    <option value="Solo avisos de hoy">Solo avisos de hoy</option>
+                    <option value="Hoy y esta semana">Hoy y esta semana</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="invite-schedule">Horario de turno (Lima UTC-5)</label>
+                  <select id="invite-schedule">
+                    <option value="Lunes a sábado · 09:00 a 18:00">Lunes a sábado · 09:00 a 18:00</option>
+                    <option value="Lunes a viernes · 14:00 a 20:00">Lunes a viernes · 14:00 a 20:00 (Tarde)</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary full-width">Generar código de invitación</button>
+            </form>
+
+            <div id="generated-code-banner" class="invitation-code-box hidden" role="status">
+              <span class="tag-step">CÓDIGO TEMPORAL DE UN SOLO USO</span>
+              <strong class="code-digits" id="generated-code-value">615 203</strong>
+              <p id="generated-code-details">Comparte este código con tu colaborador · Sin acceso a saldos ni transferencias</p>
+            </div>
+          </div>
+
+          <div class="card panel-card">
+            <h3>Integrantes con acceso y registro de actividad</h3>
+            <p class="text-small text-muted mb-16">Consulta el equipo de ejemplo y simula retirar un acceso.</p>
+
+            <div id="team-members-list" class="compact-list"></div>
+
+            <h4 class="mt-24 mb-12">Registro reciente de cambios de acceso</h4>
+            <div id="permissions-audit-log" class="compact-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 4: BILLETERAS Y TARKIPAY BOX -->
+      <div id="tab-dispositivos" class="sim-panel" role="tabpanel">
+        <div class="sim-grid-2">
+          <div class="card panel-card">
+            <h3>Fuentes de notificación en el teléfono receptor</h3>
+            <p class="text-small text-muted mb-16">Simula activar o desactivar una fuente. Los avisos previos se conservan.</p>
+
+            <div class="sources-list">
+              <div class="source-item">
+                <div>
+                  <strong>Yape (Notificaciones en Android)</strong>
+                  <span class="text-small text-muted block" id="source-yape-meta">Estado: Activa · Último aviso recibido hoy a las 14:32</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm source-toggle-btn" data-source="Yape">
+                  Desactivar fuente
+                </button>
+              </div>
+
+              <div class="source-item">
+                <div>
+                  <strong>Plin (Notificaciones en Android)</strong>
+                  <span class="text-small text-muted block" id="source-plin-meta">Estado: Activa · Último aviso recibido hoy a las 14:31</span>
+                </div>
+                <button type="button" class="btn btn-secondary btn-sm source-toggle-btn" data-source="Plin">
+                  Desactivar fuente
+                </button>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary full-width mt-16" id="btn-test-source-config">
+              Probar lectura de notificaciones del receptor
+            </button>
+            <div id="source-test-feedback" class="alert-box success hidden mt-12" role="status">
+              Permiso de lectura verificado correctamente. (Esta comprobación técnica no genera un cobro ficticio ni altera el total del día).
+            </div>
+
+            <h4 class="mt-24 mb-12">Dispositivos con sesión iniciada</h4>
+            <div id="active-devices-list" class="compact-list"></div>
+          </div>
+
+          <div class="card panel-card">
+            <h3>Configuración de TarkiPay Box Mostrador</h3>
+            <p class="text-small text-muted mb-16">Explora la vinculación y el volumen. No se conecta un dispositivo físico.</p>
+
+            <div class="box-monitor-card">
+              <div>
+                <span class="tag-step">ESTADO DEL DISPOSITIVO EN MOSTRADOR</span>
+                <h4 id="box-connection-title">Conectado · 3 avisos enviados hoy</h4>
+                <p id="box-connection-sub">Última sincronización: 14:33 · Tono Campana · Volumen 60%</p>
+              </div>
+              <div class="box-pulse-indicator"></div>
+            </div>
+
+            <form id="form-pair-box" class="form-stack mt-16" novalidate>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="box-pair-code">Código en pantalla del Box</label>
+                  <input type="text" id="box-pair-code" value="731 204" />
+                </div>
+                <div class="form-group">
+                  <label for="box-sound-level">Tono y nivel de volumen</label>
+                  <select id="box-sound-level">
+                    <option value="Tono Campana · Volumen 60%">Tono Campana · Volumen 60%</option>
+                    <option value="Tono Campana · Volumen 80%">Tono Campana · Volumen 80%</option>
+                    <option value="Tono Suave · Volumen 60%">Tono Suave · Volumen 60%</option>
+                  </select>
+                </div>
+              </div>
+              <div class="button-row-2">
+                <button type="submit" class="btn btn-primary">Guardar configuración</button>
+                <button type="button" class="btn btn-secondary" id="btn-test-box-sound">
+                  Enviar prueba de sonido
+                </button>
+              </div>
+              <button type="button" class="btn btn-secondary full-width" id="btn-test-expired-box-code">
+                Simular código vencido o utilizado
+              </button>
+            </form>
+            <div id="box-action-feedback" class="alert-box success hidden mt-12" role="status"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 5: RESUMEN DIARIO Y EXPORTACIÓN -->
+      <div id="tab-cierre" class="sim-panel" role="tabpanel">
+        <div class="card panel-card">
+          <div class="panel-card-header">
+            <div>
+              <h3>Resumen por periodo y cuadre de cierre</h3>
+              <p class="text-small text-muted">Los importes detectados por notificación se muestran separados de aquellos revisados expresamente en la billetera receptora.</p>
+            </div>
+            <div class="cierre-controls">
+              <label for="cierre-date-select" class="sr-only">Seleccionar periodo</label>
+              <select id="cierre-date-select" class="select-compact">
+                <option value="2026-10-07">Hoy · 7 de octubre de 2026</option>
+                <option value="2026-10-06">Ayer · 6 de octubre de 2026</option>
+                <option value="2026-10-05">Lunes · 5 de octubre de 2026 (Sin movimientos)</option>
+                <option value="ALL">Mes completo · Octubre de 2026</option>
+              </select>
+              <button type="button" class="btn btn-primary btn-sm" id="btn-export-csv">
+                Descargar Reporte CSV
+              </button>
+            </div>
+          </div>
+
+          <div class="grid-3 mt-16">
+            <div class="summary-stat-card indigo-card">
+              <span class="stat-label">TOTAL EN AVISOS DETECTADOS</span>
+              <strong class="stat-value" id="stat-total-avisos">S/ 55.00</strong>
+              <p class="stat-note" id="stat-count-avisos">4 avisos registrados · 3 con importe legible.</p>
+            </div>
+
+            <div class="summary-stat-card green-card">
+              <span class="stat-label">COBROS REVISADOS EN BILLETERA</span>
+              <strong class="stat-value" id="stat-total-revisados">S/ 35.00</strong>
+              <p class="stat-note">Verificados manualmente en la app receptora.</p>
+            </div>
+
+            <div class="summary-stat-card amber-card">
+              <span class="stat-label">VENTAS POR REVISAR AL CIERRE</span>
+              <strong class="stat-value" id="stat-total-pendientes">1 pendiente</strong>
+              <p class="stat-note">Operaciones con diferencia o pendientes de confirmación.</p>
+            </div>
+          </div>
+
+          <p class="demo-table-hint">Desliza la tabla para ver todos los datos.</p>
+          <div id="cierre-table-wrapper" class="table-responsive mt-24">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Fecha y Hora</th>
+                  <th>Código</th>
+                  <th>Importe</th>
+                  <th>Nombre recibido</th>
+                  <th>Billetera</th>
+                  <th>Estado</th>
+                  <th>Constancia / Observación</th>
+                </tr>
+              </thead>
+              <tbody id="cierre-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

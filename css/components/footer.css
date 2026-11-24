@@ -1,85 +1,156 @@
 /* ==========================================================================
-   TarkiPay - Footer Component (footer.css)
+   FOOTER.CSS - FOOTER EDITORIAL COMPLETO Y NOTAS LEGALES
    ========================================================================== */
 
 .site-footer {
-  background-color: var(--color-indigo-dark);
-  color: #E2E8F0;
-  padding: 4.5rem 0 2rem;
-  margin-top: 4rem;
+  padding-top: 0;
+  padding-bottom: 48px;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  border-top: 1px solid var(--border-light);
 }
 
-.footer-container {
+.site-footer .footer-statement {
+  font-size: clamp(32px, 4.1vw, 55px);
+  padding: 48px 0 45px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -.04em;
+  color: var(--purple-night);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.site-footer .footer-statement span {
+  color: var(--indigo-primary);
+}
+
+.footer-top-grid {
   display: grid;
-  grid-template-columns: 1.5fr 2fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-top: 36px;
+  padding-bottom: 32px;
 }
 
-.footer-brand .brand-monochrome .brand-name {
-  color: #FFFFFF;
-}
-
-.footer-brand .brand-monochrome .brand-name span {
-  color: var(--color-turquesa);
-}
-
-.brand-tagline {
-  margin-top: 0.75rem;
-  font-size: 0.95rem;
-  color: #94A3B8;
-  max-width: 320px;
-}
-
-.footer-links {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.footer-column h4 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #FFFFFF;
-  margin-bottom: 1.25rem;
-}
-
-.footer-column a {
-  display: block;
-  text-decoration: none;
-  color: #94A3B8;
-  font-size: 0.9rem;
-  margin-bottom: 0.65rem;
-  transition: var(--transition-smooth);
-}
-
-.footer-column a:hover {
-  color: var(--color-turquesa);
-}
-
-.social-links {
+.footer-brand-col {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 14px;
 }
 
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 2rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #64748B;
+.footer-logo-badge {
+  display: inline-flex;
+  align-items: center;
 }
 
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
+.footer-logo-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.footer-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 27ch;
+}
+
+.footer-desc strong {
+  color: var(--indigo-primary);
+  font-weight: 700;
+}
+
+.footer-links-col h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  letter-spacing: -.02em;
+}
+
+.footer-links-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-col a,
+.footer-link-btn {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.footer-links-col a:hover,
+.footer-link-btn:hover {
+  color: var(--indigo-primary);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+  font-size: 11px;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.footer-security-note {
+  max-width: 55ch;
+  font-size: 11px;
+  color: var(--text-dimmed);
+  text-align: right;
+}
+
+/* Responsividad del Footer */
+@media (max-width: 850px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
   }
 
-  .footer-links {
+  .site-footer .footer-statement {
+    font-size: 42px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 12px;
+  }
+
+  .footer-security-note {
+    text-align: left;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-top-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 28px 20px;
+  }
+
+  .site-footer .footer-statement {
+    font-size: 36px;
+    padding-bottom: 30px;
+  }
+
+  .footer-bottom-bar {
+    font-size: 11px;
   }
 }
