@@ -1,22 +1,16 @@
-TarkiPay por KAYRAQ — Proyecto para el equipo
+TarkiPay — Corrección funcional del 25 de noviembre de 2026
 
-CONTENIDO
-Código HTML, CSS y JavaScript, recursos visuales, informes en docs/, pruebas en tests/ y generador del informe en scripts/.
+TarkiPay_Landing/: copia editable corregida. Servir esta carpeta por HTTP.
+sources/: originales extraídos del ZIP aportado, intactos.
+evidencias/antes/: defectos reproducidos antes de modificar código.
+evidencias/despues/: resultados finales y capturas.
+evidencias/desarrollo/: ensayos intermedios, separados de la aceptación final.
 
-ABRIR LA LANDING
-1. Extraer toda la carpeta TarkiPay_Landing.
-2. Abrir una terminal en esa carpeta.
-3. Con Python instalado: python -m http.server 8765 --bind 127.0.0.1
-4. Abrir http://127.0.0.1:8765/#demo en el navegador.
-También se puede usar Live Server de VS Code.
-La página carga secciones mediante fetch; usar un servidor local en lugar de abrir index.html con doble clic.
+Leer primero TarkiPay_Landing/docs/INFORME_CORRECCIONES_20261125.md.
+Matriz actual: TarkiPay_Landing/docs/matriz_30_HU.json.
+Resultado frente a los requisitos originales: 16 cumplen, 14 parciales. No es 30/30 integrado.
+Los informes anteriores de Word y Markdown están en docs/historico/ y no son el dictamen vigente.
 
-PRUEBAS
-Con Node.js instalado: node tests/acceptance.cjs
-Resultado registrado: 94 PASS, 0 FAIL.
-
-ALCANCE
-Selección fija de 30 HU. Veinte verificadas en alcance del navegador y diez parciales por integración externa. Consultar los criterios y las limitaciones en docs/TRACEABILITY_30_HU.md.
-Los datos, identidades, transporte y Box son simulados. No hay autenticación real, captura Android, broker MQTT ni ESP32 conectado. No usar información real.
-Los cambios de demo se guardan en el navegador de cada persona. Restablecer ejemplos desde la cuenta ficticia administradora para recuperar los datos iniciales.
-La aceptación final en GitHub Pages sigue pendiente. Este archivo no incluye historial Git, instrucciones internas ni temporales de revisión.
+Para abrir: entrar a TarkiPay_Landing y ejecutar python -m http.server 8768 --bind 127.0.0.1
+Abrir http://127.0.0.1:8768/. La migración automática de datos previos requiere el mismo origen/puerto del navegador anterior; su localStorage v3 no se borra. Cerrar la versión vieja antes de adoptar la nueva.
+No hay autenticación real, Android, servidor, MQTT ni Box físico. Usar datos ficticios.

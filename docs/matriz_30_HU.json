@@ -1,0 +1,896 @@
+{
+  "scope": "Fichas TB2 originales. Corrección funcional de HU-010 CA03 y del simulador HU-036 CA03. No es certificación de plataforma integrada.",
+  "date": "2026-11-25",
+  "totals": {
+    "Cumple": 16,
+    "Parcial": 14,
+    "No cumple": 0
+  },
+  "rows": [
+    {
+      "id": "HU-002",
+      "name": "Ver los datos de un aviso",
+      "criteria": [
+        "El detalle muestra el monto, la hora, el nombre y la billetera solo si se pudieron leer.",
+        "Los datos que faltan aparecen como «No disponible».",
+        "Abrir un aviso no lo marca como pago comprobado."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B01; suite 002",
+      "code": "demo-core.js:111; demo-ui.js:97",
+      "evidence": "Detalle conserva campos; ausencias explícitas; leer no verifica.",
+      "deficit": "Sin déficit en los tres CA de presentación.",
+      "recommendation": "Conservar regresión de datos incompletos.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-003",
+      "name": "Ver de qué billetera viene el aviso",
+      "criteria": [
+        "El detalle muestra el nombre de la billetera cuando la app puede reconocerla.",
+        "Si no se reconoce la fuente, se muestra «Billetera no identificada».",
+        "El nombre de la fuente no se presenta como prueba de que el dinero ingresó."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B01, B04; suite 003",
+      "code": "demo-ui.js:10; demo-ui.js:89",
+      "evidence": "Yape, Plin y billetera no identificada visibles; sin comprobación bancaria automática.",
+      "deficit": "Sin déficit en los CA de presentación; reconocimiento probado con eventos de ejemplo.",
+      "recommendation": "Probar nuevas fuentes con el futuro lector Android.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-004",
+      "name": "Aclarar qué significa un aviso",
+      "criteria": [
+        "La alerta y el detalle se identifican como avisos detectados.",
+        "Abrir o leer el aviso no cambia su significado.",
+        "Si hay dudas, la pantalla indica que se puede consultar la billetera receptora."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B01, B05; suite 004",
+      "code": "demo-ui.js:97",
+      "evidence": "El detalle indica aviso detectado; abrir no acredita ingreso; orienta a billetera.",
+      "deficit": "Sin déficit en los CA de significado y lectura.",
+      "recommendation": "Mantener estos textos al integrar transporte real.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-005",
+      "name": "Buscar por monto",
+      "criteria": [
+        "Puedo ingresar un monto positivo para filtrar los avisos.",
+        "La lista muestra los avisos que coinciden con ese monto.",
+        "Puedo quitar el filtro y volver a ver los demás."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B02, B03, B05; suite 005",
+      "code": "demo-core.js:103; demo-ui.js:154",
+      "evidence": "S/20 devuelve dos registros; −5 se rechaza; limpiar devuelve cuatro; 99 produce vacío útil.",
+      "deficit": "Sin déficit en búsqueda por importe.",
+      "recommendation": "Mantener validación monetaria y búsqueda vacía.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-006",
+      "name": "Distinguir avisos del mismo monto",
+      "criteria": [
+        "Dos avisos distintos del mismo monto aparecen por separado.",
+        "Cada uno conserva su hora y su nombre, si llegaron esos datos.",
+        "Si no hay datos suficientes para distinguirlos, la app no elige uno por su cuenta."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B02; A01; suite 006",
+      "code": "demo-core.js:105; demo-ui.js:89",
+      "evidence": "Importes iguales tienen ID, nombre y hora propios; no se asigna cliente automáticamente.",
+      "deficit": "Sin déficit en distinción de registros presentes.",
+      "recommendation": "Conservar identidad de evento al conectar el receptor.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-011",
+      "name": "Leer el monto antes de entregar",
+      "criteria": [
+        "El monto recibido se muestra de forma fácil de leer.",
+        "La app no pide escribir el precio de la venta para mostrar ese aviso.",
+        "Si falta el monto, se indica que no se pudo leer."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B01, B02; suite 011",
+      "code": "demo-ui.js:89; demo-ui.js:115",
+      "evidence": "Importe directo en tarjeta y detalle; sin registrar venta; monto ausente explícito.",
+      "deficit": "Sin déficit en los CA de lectura.",
+      "recommendation": "Conservar legibilidad en capturas finales.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-027",
+      "name": "Mostrar solo lo necesario al equipo",
+      "criteria": [
+        "El colaborador puede ver monto, hora, billetera y nombre cuando se pudieron leer.",
+        "La app no permite transferir dinero ni abrir la billetera del dueño.",
+        "Si falta un dato, aparece como no disponible en vez de pedir más acceso."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B01, B12; suite 027",
+      "code": "demo-ui.js:97",
+      "evidence": "Colaborador ve campos recibidos; faltantes explícitos; no hay transferencias ni apertura de billetera.",
+      "deficit": "Cumple los tres CA de datos presentados; esto no certifica protección del almacenamiento local.",
+      "recommendation": "Resolver autorización general mediante las acciones de HU-031/032.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-034",
+      "name": "Ver cantidad y monto de los avisos",
+      "criteria": [
+        "El resumen muestra número de avisos y suma de los montos que pudieron leerse.",
+        "Un aviso sin monto se cuenta como aviso, pero no añade una cantidad inventada.",
+        "El resumen aclara que no muestra el saldo real de ninguna billetera."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B08, B10; A06; suite 034",
+      "code": "demo-core.js:203; demo-ui.js:101",
+      "evidence": "Día: 4 avisos, 3 con importe, S/55; revisión manual S/35. Mes: 5 y S/90. CSV coherente.",
+      "deficit": "Sin déficit en cálculo observado. Los valores son avisos, no saldo.",
+      "recommendation": "Repetir conciliación de suma, desglose y CSV tras cada cambio.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-040",
+      "name": "Buscar un aviso por nombre",
+      "criteria": [
+        "La búsqueda usa el nombre que pudo leerse en el aviso.",
+        "Los resultados muestran monto y hora para ayudar a distinguirlos.",
+        "Si el aviso no trae nombre, la app no le asigna uno por su cuenta."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B04; suite 040",
+      "code": "demo-core.js:106",
+      "evidence": "maria encuentra María López, conserva importe y hora; no inventa nombre faltante.",
+      "deficit": "Sin déficit en búsqueda de los registros disponibles.",
+      "recommendation": "Conservar normalización y casos sin nombre.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-041",
+      "name": "Filtrar avisos por billetera",
+      "criteria": [
+        "El filtro ofrece las fuentes reconocidas por ese negocio.",
+        "Solo aparecen los avisos identificados con la billetera elegida.",
+        "Los avisos de origen desconocido quedan accesibles al quitar el filtro."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Cumple",
+      "tests": "B04; suite 041",
+      "code": "demo-core.js:107; demo-ui.js:157",
+      "evidence": "Filtros Yape/Plin/Sin identificar y limpieza conservan acceso a desconocidos.",
+      "deficit": "Sin déficit en filtro de origen.",
+      "recommendation": "Mantener desconocidos separados y accesibles.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-001",
+      "name": "Avisos recientes",
+      "criteria": [
+        "Los avisos más nuevos aparecen primero.",
+        "Cada fila muestra monto y hora si se pudieron leer.",
+        "Una lista vacía no se presenta como prueba de que nadie pagó."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Parcial",
+      "tests": "B01, B06; A01; suite 001",
+      "code": "demo-core.js:99; demo-core.js:109",
+      "evidence": "Lista ordenada por eventAt o receivedAt; 100 eventos desordenados mantienen orden; vacío prudente.",
+      "deficit": "Sin déficit en orden y presentación para eventos presentes. La pérdida concurrente se trata en HU-010.",
+      "recommendation": "Conservar prueba de llegada desordenada.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-007",
+      "name": "Saber qué hacer si falta un aviso",
+      "criteria": [
+        "La lista vacía no afirma que el cliente no pagó.",
+        "La app indica que se debe consultar la billetera receptora si hace falta comprobar el ingreso.",
+        "Un aviso que aparece más tarde conserva su hora y no se presenta como un pago nuevo distinto."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Parcial",
+      "tests": "B05, B06; suite 007",
+      "code": "demo-core.js:115; demo-core.js:133; demo-ui.js:103",
+      "evidence": "Vacío orienta a billetera; tardío conserva ID y dos marcas temporales; reenvío no duplica.",
+      "deficit": "Cumple con eventos suministrados al modelo; no demuestra captura Android.",
+      "recommendation": "Conservar ID original al integrar recepción tardía.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-008",
+      "name": "Saber si la lista está al día",
+      "criteria": [
+        "Se muestra la hora de la última actualización realizada.",
+        "Puedo solicitar una nueva actualización.",
+        "Si falla la conexión, veo una advertencia y la hora anterior."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B07; suite 008",
+      "code": "demo-core.js:129; demo-ui.js:14; demo-ui.js:151",
+      "evidence": "Actualiza cola local y hora; desconexión real del navegador advierte y conserva última hora válida.",
+      "deficit": "No consulta servicio remoto ni detecta caída del backend con navegador en línea.",
+      "recommendation": "Implementar sincronización remota, estado de respuesta y marca de última sincronización lograda.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Parcial"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-009",
+      "name": "Juntar avisos de distintas billeteras",
+      "criteria": [
+        "La lista reúne los avisos captados de las fuentes habilitadas.",
+        "Cada aviso conserva el nombre de su billetera si se reconoce.",
+        "Una fuente sin permiso o sin notificaciones no se inventa en la lista."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B06; A06; suite 009",
+      "code": "demo-core.js:115; demo-core.js:129",
+      "evidence": "Consolida eventos ficticios y respeta fuentes activas en el ingreso.",
+      "deficit": "No captura notificaciones ni verifica permisos Android; las fuentes son configuración ficticia.",
+      "recommendation": "Conectar lector autorizado y probar Yape/Plin con notificaciones compatibles y permisos retirados.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-010",
+      "name": "No perder avisos seguidos",
+      "criteria": [
+        "Los avisos diferentes se guardan como registros separados.",
+        "La lista los ordena usando la hora disponible.",
+        "La llegada de uno nuevo no borra el anterior."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Parcial",
+      "tests": "B06; A01; D03; limites-browser.json",
+      "code": "demo-core.js:58; demo-core.js:71; demo-core.js:129",
+      "evidence": "Aviso y perfil concurrentes sobreviven en IndexedDB tras recarga. Revocaciones y canjes se validan dentro de la transacción; conflicto de la misma versión rechazado.",
+      "deficit": "Sin déficit reproducido para los tres CA de registros disponibles en el navegador. Esto no acredita captura Android.",
+      "recommendation": "Usar almacenamiento transaccional con versión y fusión por ID; prueba concurrente sin pérdidas.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Parcial"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "D03 corregido; C01–C17 de tests/fixes-browser.cjs; CA01/CA02 conservados por suite 010 y B06.",
+      "simulator_observation": {
+        "CA01": "Verificado",
+        "CA02": "Verificado",
+        "CA03": "Verificado con dos pestañas reales y reloj controlado"
+      }
+    },
+    {
+      "id": "HU-012",
+      "name": "Crear el perfil del negocio",
+      "criteria": [
+        "La cuenta nueva queda asociada a un negocio con nombre identificable.",
+        "Solo el administrador puede cambiar el nombre y los datos de ese negocio.",
+        "Antes de guardar se piden los datos obligatorios; no se solicitan claves de la billetera."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Cumple"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B13, B16; suite 012",
+      "code": "demo-core.js:39; demo-core.js:157",
+      "evidence": "Negocios con ID propio, validación obligatoria, edición protegida dentro del modelo y persistencia.",
+      "deficit": "Cuenta ficticia; sin registro/autenticación real ni autorización remota de administrador.",
+      "recommendation": "Crear cuentas y membresías verificadas en servidor; autorizar cada modificación.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Cumple"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-013",
+      "name": "No repetir el mismo aviso",
+      "criteria": [
+        "Un aviso conserva un identificador al sincronizarse.",
+        "Reenviar ese identificador no añade otro registro.",
+        "Dos avisos realmente diferentes del mismo monto se mantienen separados."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Cumple"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B06; A01, A02; suite 013",
+      "code": "demo-core.js:115; demo-core.js:133",
+      "evidence": "Deduplica el ID dentro y entre actualizaciones y recargas; conserva distintos IDs del mismo monto.",
+      "deficit": "Los IDs proceden del generador o API local; no hay contrato de identidad de la cadena Android/servicio/Box.",
+      "recommendation": "Definir identidad estable de origen y deduplicación transaccional en servicio y consumidores.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Cumple"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-025",
+      "name": "Generar un código para el equipo",
+      "criteria": [
+        "Solo el administrador puede crear el código y ver hasta cuándo sirve.",
+        "El código corresponde a un negocio y a los permisos que el dueño eligió.",
+        "Un código vencido o ya utilizado no da acceso al negocio."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B11; A03, A04; limites-browser.json",
+      "code": "demo-core.js:141; demo-core.js:176",
+      "evidence": "Código local con negocio, alcance y vencimiento; generar no activa miembro; inválidos/usados rechazados.",
+      "deficit": "Administrador ficticio y código solo en localStorage: otro contexto aislado rechaza un código vigente.",
+      "recommendation": "Persistir invitaciones en servicio compartido con emisión autorizada, caducidad y consumo atómico.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-026",
+      "name": "Unirme al negocio con un código",
+      "criteria": [
+        "Antes de unirse se muestra el nombre del negocio y el acceso concedido.",
+        "El código inválido, vencido o utilizado no da acceso a los cobros.",
+        "La cuenta del colaborador no pide la clave de Yape ni permite entrar como administrador."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "No cumple",
+      "tests": "B12, B13; A03; limites-browser.json",
+      "code": "demo-core.js:182; demo-core.js:183",
+      "evidence": "Vista previa, cancelar y aceptar funcionan; crea membresía colaboradora local.",
+      "deficit": "Sin cuenta real ni canje entre dispositivos; selector y recarga permiten volver a administración ficticia.",
+      "recommendation": "Autenticar colaborador y consumir invitación en servidor sin elevar privilegios.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Parcial"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-028",
+      "name": "Quitar el acceso a un colaborador",
+      "criteria": [
+        "Antes de retirar el acceso se muestra el nombre de la persona.",
+        "Tras confirmarlo, deja de recibir nuevas alertas y no puede hacer nuevas consultas.",
+        "Los avisos del negocio siguen disponibles para el administrador."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Cumple"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B15, B21; suite 028",
+      "code": "demo-core.js:200; demo-ui.js:120",
+      "evidence": "Confirma nombre, cancelar conserva; confirmar bloquea consultas API; historial de administrador se conserva.",
+      "deficit": "Revoca membresía y entregas locales; no existe revocación de sesiones ni alertas remotas.",
+      "recommendation": "Revocar en servicio, invalidar sesión y suscripciones, probar cliente remoto ya conectado.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Cumple"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-029",
+      "name": "Miembros con acceso",
+      "criteria": [
+        "La lista muestra nombre, permiso y estado de cada miembro.",
+        "Los accesos revocados se distinguen de los vigentes.",
+        "Solo una persona con permiso de administración puede cambiar ese alcance."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B11, B13, B15; suite 029",
+      "code": "demo-core.js:194; demo-core.js:196",
+      "evidence": "Nombre, rol, alcance, turno, activo/revocado correctos; colaborador rechazado por API.",
+      "deficit": "CA03 se impone dentro de una identidad ficticia seleccionable, sin autoridad confiable.",
+      "recommendation": "Aplicar consulta y edición de miembros con autorización del servidor.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Parcial"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-030",
+      "name": "Elegir los días y horas de avisos",
+      "criteria": [
+        "El horario se define por persona, días y horas en la zona horaria del negocio.",
+        "Fuera de ese horario no se envían nuevas alertas a esa persona.",
+        "Cambiar el horario no borra los pagos anteriores ni amplía el historial permitido."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Cumple"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "A08, A09; suite 030",
+      "code": "demo-core.js:27; demo-core.js:31; demo-core.js:125",
+      "evidence": "Días/horas por miembro en America/Lima; fuera del turno no genera entrega local; cambios conservan avisos.",
+      "deficit": "No envía alertas a dispositivos reales; deliveries es un registro de simulación.",
+      "recommendation": "Aplicar evaluación del turno en el distribuidor real y comprobar entrega y omisión en teléfonos.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Cumple"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-031",
+      "name": "Entrar según mi función",
+      "criteria": [
+        "El rol proviene de la cuenta y de los permisos otorgados por el administrador.",
+        "El administrador ve negocio, Box, equipo e informes; el colaborador solo lo autorizado.",
+        "Cambiar de pantalla no permite convertirse en administrador."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B13, B14; D04, D05; limites-browser.json",
+      "code": "demo-core.js:39; demo-core.js:77; demo-core.js:152",
+      "evidence": "API valida membresía y rol; cambiar pestaña no basta para administrar en esa sesión.",
+      "deficit": "Identidades seleccionables, recarga inicia como U-1/admin y datos completos en almacenamiento local.",
+      "recommendation": "Autenticación real; sesión persistida con seguridad y autorización del lado del servidor.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Parcial"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-032",
+      "name": "Dar acceso al historial por periodo",
+      "criteria": [
+        "El permiso de hoy está separado del acceso a semana y mes.",
+        "El colaborador no ve pagos anteriores fuera de su alcance.",
+        "El administrador puede cambiar el alcance sin alterar los avisos guardados."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Cumple"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B14; A07; D04; limites-browser.json",
+      "code": "demo-core.js:79; demo-core.js:99; demo-core.js:111",
+      "evidence": "Distingue hoy/semana/mes y bloquea consulta/detalle por API; reducir alcance no borra registros.",
+      "deficit": "El historial prohibido sigue legible en localStorage; no hay exclusión de datos en respuesta de servidor.",
+      "recommendation": "Filtrar antes de enviar datos al cliente y cubrir detalle, resumen y exportación con la misma política.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Cumple",
+        "Parcial",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-033",
+      "name": "Revisar pagos por día, semana o mes",
+      "criteria": [
+        "La vista permite elegir día, semana, mes o un rango de meses disponibles.",
+        "El periodo elegido y el número de avisos quedan claros.",
+        "Un periodo sin registros aparece vacío sin concluir que no hubo pagos."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "Parcial",
+      "tests": "B09, B10; A12; suite 033",
+      "code": "demo-core.js:85; demo-ui.js:48",
+      "evidence": "Día, semana, mes y rango de meses; periodo/cantidad visibles; vacío no acusa falta de pago.",
+      "deficit": "Sin déficit en los CA de consulta de datos disponibles.",
+      "recommendation": "Repetir periodos vacíos y límites de calendario al integrar datos reales.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-036",
+      "name": "Consultar el estado del Box desde la app",
+      "criteria": [
+        "La ficha muestra la última conexión conocida del equipo.",
+        "La cantidad se etiqueta como avisos enviados al Box, no como pagos comprobados.",
+        "Una falta de conexión se muestra sin asegurar que el Box enseñó esos avisos."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B19; D01; suite 036",
+      "code": "demo-core.js:125; demo-core.js:223; demo-core.js:231",
+      "evidence": "Una sola política de conexión; después de 120000 ms el nuevo aviso queda pendiente sin intento, aceptación ni acuse. Reconexión y acuses idempotentes comprobados virtualmente.",
+      "deficit": "No existe telemetría ni acuse de un Box físico. Se corrigió la contradicción local; CA01 y CA03 siguen parciales frente al requisito original de equipo real.",
+      "recommendation": "Compartir regla de conexión vigente entre estado/envío; pendiente al expirar; integrar heartbeat y acuse reales.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "D01 corregido localmente; T01–T07 y R03 de tests/fixes-browser.cjs. HU sigue Parcial ante el equipo físico.",
+      "simulator_observation": {
+        "CA01": "Última comunicación virtual verificada",
+        "CA02": "Cantidad de avisos aceptados por canal virtual, no pagos",
+        "CA03": "Verificado en simulador: timeout, desconexión manual, reconexión y acuse explícito"
+      }
+    },
+    {
+      "id": "HU-037",
+      "name": "Vincular el Box mediante un código",
+      "criteria": [
+        "Un Box sin vincular muestra un código de vinculación de vigencia limitada.",
+        "Solo el administrador puede introducirlo y confirmar a qué negocio se asociará.",
+        "El código vencido o utilizado no vincula un equipo ni muestra pagos."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B17, B18; A05; suite 037",
+      "code": "demo-core.js:213; demo-core.js:217",
+      "evidence": "Código temporal virtual, vista previa, cancelar/confirmar y rechazo de vacío, inválido, vencido/usado.",
+      "deficit": "Código generado por el navegador; no existe Box físico ni registro compartido que confirme vinculación.",
+      "recommendation": "Código temporal emitido por dispositivo, consumo autorizado en servidor y verificación de asociación física.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Parcial",
+        "Parcial"
+      ],
+      "before_demo_status": "Parcial",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-039",
+      "name": "Buscar avisos por hora",
+      "criteria": [
+        "Se puede elegir un intervalo de horas dentro del día visible.",
+        "La lista conserva separados los avisos que coincidan en ese intervalo.",
+        "Quitar el filtro devuelve todos los avisos del periodo."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "No cumple",
+      "tests": "B04; A11; suite 039",
+      "code": "demo-core.js:104; demo-core.js:108; demo-ui.js:158",
+      "evidence": "Intervalo de horas combinado con importe/nombre/fuente; inválido rechazado; quitarlo conserva periodo.",
+      "deficit": "Sin déficit en búsqueda horaria; si falta hora original usa recepción y lo explica.",
+      "recommendation": "Mantener prueba de límites, misma hora y aviso sin hora original.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-042",
+      "name": "Ver los avisos del día como colaborador",
+      "criteria": [
+        "La vista de hoy muestra solo los avisos del negocio al que tengo acceso.",
+        "Cada aviso conserva los datos que pudieron leerse.",
+        "Para ver otros días necesito el permiso de historial correspondiente."
+      ],
+      "criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "status": "Parcial",
+      "previous": "Parcial",
+      "tests": "B12, B14, B15; D04; limites-browser.json",
+      "code": "demo-core.js:99; demo-core.js:111",
+      "evidence": "Vista de hoy respeta membresía y negocio en API; conserva datos; periodos bloqueados según alcance.",
+      "deficit": "Negocio/historial solo restringidos en modelo local; datos íntegros accesibles y cambio libre de identidad.",
+      "recommendation": "Autenticar y filtrar por negocio, membresía y periodo antes de entregar información.",
+      "before_status": "Parcial",
+      "before_criteria_status": [
+        "Parcial",
+        "Cumple",
+        "Parcial"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    },
+    {
+      "id": "HU-043",
+      "name": "Ver un desglose por billetera",
+      "criteria": [
+        "El resumen separa los avisos de cada fuente reconocida y muestra su cantidad.",
+        "Los avisos sin billetera identificada se muestran aparte.",
+        "Se indica que las sumas provienen de avisos detectados y no muestran saldos reales."
+      ],
+      "criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "status": "Cumple",
+      "previous": "No cumple",
+      "tests": "B08, B09; A06; suite 043",
+      "code": "demo-core.js:203; demo-ui.js:104",
+      "evidence": "Yape 2/S/35, Plin 1/S/20, desconocido 1/S/0 sin monto; filtros/periodos recalculan.",
+      "deficit": "Sin déficit en agregación y significado de importes disponibles.",
+      "recommendation": "Conservar conteo de desconocidos y no interpretar suma como saldo.",
+      "before_status": "Cumple",
+      "before_criteria_status": [
+        "Cumple",
+        "Cumple",
+        "Cumple"
+      ],
+      "before_demo_status": "Cumple",
+      "regression_evidence": "Suite original CA01–CA03 en tests/acceptance.cjs y escenarios de navegador B01–B21; sin nuevas integraciones."
+    }
+  ],
+  "baseline_totals": {
+    "Cumple": 15,
+    "Parcial": 15
+  },
+  "simulator_scope": "27 nuevas regresiones de concurrencia/Box aprobadas; no se infiere cumplimiento de todos los requisitos de identidad e integración."
+}

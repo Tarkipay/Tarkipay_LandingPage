@@ -1,0 +1,764 @@
+{
+  "scope": "Evaluación literal estricta de las fichas TB2; mantiene límites de cuenta e integración.",
+  "date": "2026-11-25",
+  "totals": {
+    "Cumple": 16,
+    "Parcial": 14
+  },
+  "criteria_totals": {
+    "Cumple": 63,
+    "Parcial": 27
+  },
+  "rows": [
+    {
+      "id": "HU-001",
+      "name": "Avisos recientes",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Los avisos más nuevos aparecen primero.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Cada fila muestra monto y hora si se pudieron leer.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Una lista vacía no se presenta como prueba de que nadie pagó.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-002",
+      "name": "Ver los datos de un aviso",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El detalle muestra el monto, la hora, el nombre y la billetera solo si se pudieron leer.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Los datos que faltan aparecen como «No disponible».",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Abrir un aviso no lo marca como pago comprobado.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-003",
+      "name": "Ver de qué billetera viene el aviso",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El detalle muestra el nombre de la billetera cuando la app puede reconocerla.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Si no se reconoce la fuente, se muestra «Billetera no identificada».",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "El nombre de la fuente no se presenta como prueba de que el dinero ingresó.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-004",
+      "name": "Aclarar qué significa un aviso",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La alerta y el detalle se identifican como avisos detectados.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Abrir o leer el aviso no cambia su significado.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Si hay dudas, la pantalla indica que se puede consultar la billetera receptora.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-005",
+      "name": "Buscar por monto",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Puedo ingresar un monto positivo para filtrar los avisos.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "La lista muestra los avisos que coinciden con ese monto.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Puedo quitar el filtro y volver a ver los demás.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-006",
+      "name": "Distinguir avisos del mismo monto",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Dos avisos distintos del mismo monto aparecen por separado.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Cada uno conserva su hora y su nombre, si llegaron esos datos.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Si no hay datos suficientes para distinguirlos, la app no elige uno por su cuenta.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-007",
+      "name": "Saber qué hacer si falta un aviso",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La lista vacía no afirma que el cliente no pagó.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "La app indica que se debe consultar la billetera receptora si hace falta comprobar el ingreso.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Un aviso que aparece más tarde conserva su hora y no se presenta como un pago nuevo distinto.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-008",
+      "name": "Saber si la lista está al día",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Se muestra la hora de la última actualización realizada.",
+          "status": "Parcial",
+          "limitation": "El servicio es virtual; no hay consulta ni disponibilidad de un backend remoto real."
+        },
+        {
+          "id": "CA02",
+          "original": "Puedo solicitar una nueva actualización.",
+          "status": "Parcial",
+          "limitation": "El servicio es virtual; no hay consulta ni disponibilidad de un backend remoto real."
+        },
+        {
+          "id": "CA03",
+          "original": "Si falla la conexión, veo una advertencia y la hora anterior.",
+          "status": "Parcial",
+          "limitation": "El servicio es virtual; no hay consulta ni disponibilidad de un backend remoto real."
+        }
+      ]
+    },
+    {
+      "id": "HU-009",
+      "name": "Juntar avisos de distintas billeteras",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La lista reúne los avisos captados de las fuentes habilitadas.",
+          "status": "Parcial",
+          "limitation": "No se capturan notificaciones ni permisos del sistema Android real."
+        },
+        {
+          "id": "CA02",
+          "original": "Cada aviso conserva el nombre de su billetera si se reconoce.",
+          "status": "Cumple",
+          "limitation": "No se capturan notificaciones ni permisos del sistema Android real."
+        },
+        {
+          "id": "CA03",
+          "original": "Una fuente sin permiso o sin notificaciones no se inventa en la lista.",
+          "status": "Parcial",
+          "limitation": "No se capturan notificaciones ni permisos del sistema Android real."
+        }
+      ]
+    },
+    {
+      "id": "HU-010",
+      "name": "No perder avisos seguidos",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Los avisos diferentes se guardan como registros separados.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "La lista los ordena usando la hora disponible.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "La llegada de uno nuevo no borra el anterior.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-011",
+      "name": "Leer el monto antes de entregar",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El monto recibido se muestra de forma fácil de leer.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "La app no pide escribir el precio de la venta para mostrar ese aviso.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Si falta el monto, se indica que no se pudo leer.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-012",
+      "name": "Crear el perfil del negocio",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La cuenta nueva queda asociada a un negocio con nombre identificable.",
+          "status": "Parcial",
+          "limitation": "No hay registro ni autoridad de cuenta externa; las identidades son personajes locales."
+        },
+        {
+          "id": "CA02",
+          "original": "Solo el administrador puede cambiar el nombre y los datos de ese negocio.",
+          "status": "Parcial",
+          "limitation": "No hay registro ni autoridad de cuenta externa; las identidades son personajes locales."
+        },
+        {
+          "id": "CA03",
+          "original": "Antes de guardar se piden los datos obligatorios; no se solicitan claves de la billetera.",
+          "status": "Cumple",
+          "limitation": "No hay registro ni autoridad de cuenta externa; las identidades son personajes locales."
+        }
+      ]
+    },
+    {
+      "id": "HU-013",
+      "name": "No repetir el mismo aviso",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Un aviso conserva un identificador al sincronizarse.",
+          "status": "Parcial",
+          "limitation": "La identidad se conserva en toda la cadena virtual; falta contrato y prueba con emisor Android, transporte y dispositivo reales."
+        },
+        {
+          "id": "CA02",
+          "original": "Reenviar ese identificador no añade otro registro.",
+          "status": "Parcial",
+          "limitation": "La identidad se conserva en toda la cadena virtual; falta contrato y prueba con emisor Android, transporte y dispositivo reales."
+        },
+        {
+          "id": "CA03",
+          "original": "Dos avisos realmente diferentes del mismo monto se mantienen separados.",
+          "status": "Cumple",
+          "limitation": "La identidad se conserva en toda la cadena virtual; falta contrato y prueba con emisor Android, transporte y dispositivo reales."
+        }
+      ]
+    },
+    {
+      "id": "HU-025",
+      "name": "Generar un código para el equipo",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Solo el administrador puede crear el código y ver hasta cuándo sirve.",
+          "status": "Parcial",
+          "limitation": "No hay administrador autenticado ni servicio compartido entre dispositivos; los códigos pertenecen al mismo origen del navegador."
+        },
+        {
+          "id": "CA02",
+          "original": "El código corresponde a un negocio y a los permisos que el dueño eligió.",
+          "status": "Cumple",
+          "limitation": "No hay administrador autenticado ni servicio compartido entre dispositivos; los códigos pertenecen al mismo origen del navegador."
+        },
+        {
+          "id": "CA03",
+          "original": "Un código vencido o ya utilizado no da acceso al negocio.",
+          "status": "Parcial",
+          "limitation": "No hay administrador autenticado ni servicio compartido entre dispositivos; los códigos pertenecen al mismo origen del navegador."
+        }
+      ]
+    },
+    {
+      "id": "HU-026",
+      "name": "Unirme al negocio con un código",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Antes de unirse se muestra el nombre del negocio y el acceso concedido.",
+          "status": "Cumple",
+          "limitation": "La sesión y el canje son ficticios y locales; no se autentica una cuenta externa."
+        },
+        {
+          "id": "CA02",
+          "original": "El código inválido, vencido o utilizado no da acceso a los cobros.",
+          "status": "Parcial",
+          "limitation": "La sesión y el canje son ficticios y locales; no se autentica una cuenta externa."
+        },
+        {
+          "id": "CA03",
+          "original": "La cuenta del colaborador no pide la clave de Yape ni permite entrar como administrador.",
+          "status": "Parcial",
+          "limitation": "La sesión y el canje son ficticios y locales; no se autentica una cuenta externa."
+        }
+      ]
+    },
+    {
+      "id": "HU-027",
+      "name": "Mostrar solo lo necesario al equipo",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El colaborador puede ver monto, hora, billetera y nombre cuando se pudieron leer.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "La app no permite transferir dinero ni abrir la billetera del dueño.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Si falta un dato, aparece como no disponible en vez de pedir más acceso.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-028",
+      "name": "Quitar el acceso a un colaborador",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Antes de retirar el acceso se muestra el nombre de la persona.",
+          "status": "Cumple",
+          "limitation": "La revocación se impone en la simulación; falta invalidación en sesiones y alertas de dispositivos reales."
+        },
+        {
+          "id": "CA02",
+          "original": "Tras confirmarlo, deja de recibir nuevas alertas y no puede hacer nuevas consultas.",
+          "status": "Parcial",
+          "limitation": "La revocación se impone en la simulación; falta invalidación en sesiones y alertas de dispositivos reales."
+        },
+        {
+          "id": "CA03",
+          "original": "Los avisos del negocio siguen disponibles para el administrador.",
+          "status": "Cumple",
+          "limitation": "La revocación se impone en la simulación; falta invalidación en sesiones y alertas de dispositivos reales."
+        }
+      ]
+    },
+    {
+      "id": "HU-029",
+      "name": "Miembros con acceso",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La lista muestra nombre, permiso y estado de cada miembro.",
+          "status": "Cumple",
+          "limitation": "La administración local no es una autoridad confiable frente a manipulación del navegador."
+        },
+        {
+          "id": "CA02",
+          "original": "Los accesos revocados se distinguen de los vigentes.",
+          "status": "Cumple",
+          "limitation": "La administración local no es una autoridad confiable frente a manipulación del navegador."
+        },
+        {
+          "id": "CA03",
+          "original": "Solo una persona con permiso de administración puede cambiar ese alcance.",
+          "status": "Parcial",
+          "limitation": "La administración local no es una autoridad confiable frente a manipulación del navegador."
+        }
+      ]
+    },
+    {
+      "id": "HU-030",
+      "name": "Elegir los días y horas de avisos",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El horario se define por persona, días y horas en la zona horaria del negocio.",
+          "status": "Cumple",
+          "limitation": "La entrega y el turno se validan en el broker virtual; faltan alertas reales y permisos del sistema operativo."
+        },
+        {
+          "id": "CA02",
+          "original": "Fuera de ese horario no se envían nuevas alertas a esa persona.",
+          "status": "Parcial",
+          "limitation": "La entrega y el turno se validan en el broker virtual; faltan alertas reales y permisos del sistema operativo."
+        },
+        {
+          "id": "CA03",
+          "original": "Cambiar el horario no borra los pagos anteriores ni amplía el historial permitido.",
+          "status": "Cumple",
+          "limitation": "La entrega y el turno se validan en el broker virtual; faltan alertas reales y permisos del sistema operativo."
+        }
+      ]
+    },
+    {
+      "id": "HU-031",
+      "name": "Entrar según mi función",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El rol proviene de la cuenta y de los permisos otorgados por el administrador.",
+          "status": "Parcial",
+          "limitation": "Persistir un personaje por pestaña no es autenticación. El cambio de personaje es deliberadamente accesible como herramienta de demostración."
+        },
+        {
+          "id": "CA02",
+          "original": "El administrador ve negocio, Box, equipo e informes; el colaborador solo lo autorizado.",
+          "status": "Parcial",
+          "limitation": "Persistir un personaje por pestaña no es autenticación. El cambio de personaje es deliberadamente accesible como herramienta de demostración."
+        },
+        {
+          "id": "CA03",
+          "original": "Cambiar de pantalla no permite convertirse en administrador.",
+          "status": "Parcial",
+          "limitation": "Persistir un personaje por pestaña no es autenticación. El cambio de personaje es deliberadamente accesible como herramienta de demostración."
+        }
+      ]
+    },
+    {
+      "id": "HU-032",
+      "name": "Dar acceso al historial por periodo",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El permiso de hoy está separado del acceso a semana y mes.",
+          "status": "Cumple",
+          "limitation": "El almacén local contiene los datos del prototipo y es inspeccionable; no hay exclusión de datos en una respuesta de servidor confiable."
+        },
+        {
+          "id": "CA02",
+          "original": "El colaborador no ve pagos anteriores fuera de su alcance.",
+          "status": "Parcial",
+          "limitation": "El almacén local contiene los datos del prototipo y es inspeccionable; no hay exclusión de datos en una respuesta de servidor confiable."
+        },
+        {
+          "id": "CA03",
+          "original": "El administrador puede cambiar el alcance sin alterar los avisos guardados.",
+          "status": "Cumple",
+          "limitation": "El almacén local contiene los datos del prototipo y es inspeccionable; no hay exclusión de datos en una respuesta de servidor confiable."
+        }
+      ]
+    },
+    {
+      "id": "HU-033",
+      "name": "Revisar pagos por día, semana o mes",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La vista permite elegir día, semana, mes o un rango de meses disponibles.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "El periodo elegido y el número de avisos quedan claros.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Un periodo sin registros aparece vacío sin concluir que no hubo pagos.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-034",
+      "name": "Ver cantidad y monto de los avisos",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El resumen muestra número de avisos y suma de los montos que pudieron leerse.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Un aviso sin monto se cuenta como aviso, pero no añade una cantidad inventada.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "El resumen aclara que no muestra el saldo real de ninguna billetera.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-036",
+      "name": "Consultar el estado del Box desde la app",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La ficha muestra la última conexión conocida del equipo.",
+          "status": "Parcial",
+          "limitation": "No hay telemetría, MQTT ni recepción de ESP32 físico. Los contadores y la pantalla pertenecen al Box virtual."
+        },
+        {
+          "id": "CA02",
+          "original": "La cantidad se etiqueta como avisos enviados al Box, no como pagos comprobados.",
+          "status": "Cumple",
+          "limitation": "No hay telemetría, MQTT ni recepción de ESP32 físico. Los contadores y la pantalla pertenecen al Box virtual."
+        },
+        {
+          "id": "CA03",
+          "original": "Una falta de conexión se muestra sin asegurar que el Box enseñó esos avisos.",
+          "status": "Parcial",
+          "limitation": "No hay telemetría, MQTT ni recepción de ESP32 físico. Los contadores y la pantalla pertenecen al Box virtual."
+        }
+      ]
+    },
+    {
+      "id": "HU-037",
+      "name": "Vincular el Box mediante un código",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Un Box sin vincular muestra un código de vinculación de vigencia limitada.",
+          "status": "Parcial",
+          "limitation": "Código y vinculación pertenecen al dispositivo virtual; falta el registro compartido y el dispositivo físico."
+        },
+        {
+          "id": "CA02",
+          "original": "Solo el administrador puede introducirlo y confirmar a qué negocio se asociará.",
+          "status": "Parcial",
+          "limitation": "Código y vinculación pertenecen al dispositivo virtual; falta el registro compartido y el dispositivo físico."
+        },
+        {
+          "id": "CA03",
+          "original": "El código vencido o utilizado no vincula un equipo ni muestra pagos.",
+          "status": "Parcial",
+          "limitation": "Código y vinculación pertenecen al dispositivo virtual; falta el registro compartido y el dispositivo físico."
+        }
+      ]
+    },
+    {
+      "id": "HU-039",
+      "name": "Buscar avisos por hora",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Se puede elegir un intervalo de horas dentro del día visible.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "La lista conserva separados los avisos que coincidan en ese intervalo.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Quitar el filtro devuelve todos los avisos del periodo.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-040",
+      "name": "Buscar un aviso por nombre",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La búsqueda usa el nombre que pudo leerse en el aviso.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Los resultados muestran monto y hora para ayudar a distinguirlos.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Si el aviso no trae nombre, la app no le asigna uno por su cuenta.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-041",
+      "name": "Filtrar avisos por billetera",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El filtro ofrece las fuentes reconocidas por ese negocio.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Solo aparecen los avisos identificados con la billetera elegida.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Los avisos de origen desconocido quedan accesibles al quitar el filtro.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    },
+    {
+      "id": "HU-042",
+      "name": "Ver los avisos del día como colaborador",
+      "status": "Parcial",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La vista de hoy muestra solo los avisos del negocio al que tengo acceso.",
+          "status": "Parcial",
+          "limitation": "Negocio e historial se restringen dentro del modelo local, sin autoridad remota ni protección frente al dueño del navegador."
+        },
+        {
+          "id": "CA02",
+          "original": "Cada aviso conserva los datos que pudieron leerse.",
+          "status": "Cumple",
+          "limitation": "Negocio e historial se restringen dentro del modelo local, sin autoridad remota ni protección frente al dueño del navegador."
+        },
+        {
+          "id": "CA03",
+          "original": "Para ver otros días necesito el permiso de historial correspondiente.",
+          "status": "Parcial",
+          "limitation": "Negocio e historial se restringen dentro del modelo local, sin autoridad remota ni protección frente al dueño del navegador."
+        }
+      ]
+    },
+    {
+      "id": "HU-043",
+      "name": "Ver un desglose por billetera",
+      "status": "Cumple",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El resumen separa los avisos de cada fuente reconocida y muestra su cantidad.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA02",
+          "original": "Los avisos sin billetera identificada se muestran aparte.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        },
+        {
+          "id": "CA03",
+          "original": "Se indica que las sumas provienen de avisos detectados y no muestran saldos reales.",
+          "status": "Cumple",
+          "limitation": "Sin déficit nuevo observado en los criterios de presentación, consulta o cálculo evaluados."
+        }
+      ]
+    }
+  ]
+}

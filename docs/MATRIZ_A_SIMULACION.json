@@ -1,0 +1,822 @@
+{
+  "scope": "Comportamientos demostrables en el prototipo; no certifica integración externa.",
+  "date": "2026-11-25",
+  "totals": {
+    "Cumple en demo": 30
+  },
+  "criteria_totals": {
+    "Cumple en demo": 90
+  },
+  "rows": [
+    {
+      "id": "HU-001",
+      "name": "Avisos recientes",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Los avisos más nuevos aparecen primero.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-001 CA01; S01; S07; N01"
+        },
+        {
+          "id": "CA02",
+          "original": "Cada fila muestra monto y hora si se pudieron leer.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-001 CA02; S01; S07; N01"
+        },
+        {
+          "id": "CA03",
+          "original": "Una lista vacía no se presenta como prueba de que nadie pagó.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-001 CA03; S01; S07; N01"
+        }
+      ]
+    },
+    {
+      "id": "HU-002",
+      "name": "Ver los datos de un aviso",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: detail",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El detalle muestra el monto, la hora, el nombre y la billetera solo si se pudieron leer.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-002 CA01; S03; N01"
+        },
+        {
+          "id": "CA02",
+          "original": "Los datos que faltan aparecen como «No disponible».",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-002 CA02; S03; N01"
+        },
+        {
+          "id": "CA03",
+          "original": "Abrir un aviso no lo marca como pago comprobado.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-002 CA03; S03; N01"
+        }
+      ]
+    },
+    {
+      "id": "HU-003",
+      "name": "Ver de qué billetera viene el aviso",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: validateEvent y detail",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El detalle muestra el nombre de la billetera cuando la app puede reconocerla.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-003 CA01; S01; S03; N01"
+        },
+        {
+          "id": "CA02",
+          "original": "Si no se reconoce la fuente, se muestra «Billetera no identificada».",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-003 CA02; S01; S03; N01"
+        },
+        {
+          "id": "CA03",
+          "original": "El nombre de la fuente no se presenta como prueba de que el dinero ingresó.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-003 CA03; S01; S03; N01"
+        }
+      ]
+    },
+    {
+      "id": "HU-004",
+      "name": "Aclarar qué significa un aviso",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: detail y verify",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La alerta y el detalle se identifican como avisos detectados.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-004 CA01; N01; auditoría B01"
+        },
+        {
+          "id": "CA02",
+          "original": "Abrir o leer el aviso no cambia su significado.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-004 CA02; N01; auditoría B01"
+        },
+        {
+          "id": "CA03",
+          "original": "Si hay dudas, la pantalla indica que se puede consultar la billetera receptora.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-004 CA03; N01; auditoría B01"
+        }
+      ]
+    },
+    {
+      "id": "HU-005",
+      "name": "Buscar por monto",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Puedo ingresar un monto positivo para filtrar los avisos.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-005 CA01; auditoría B02–B05"
+        },
+        {
+          "id": "CA02",
+          "original": "La lista muestra los avisos que coinciden con ese monto.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-005 CA02; auditoría B02–B05"
+        },
+        {
+          "id": "CA03",
+          "original": "Puedo quitar el filtro y volver a ver los demás.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-005 CA03; auditoría B02–B05"
+        }
+      ]
+    },
+    {
+      "id": "HU-006",
+      "name": "Distinguir avisos del mismo monto",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Dos avisos distintos del mismo monto aparecen por separado.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-006 CA01; S07; auditoría B02"
+        },
+        {
+          "id": "CA02",
+          "original": "Cada uno conserva su hora y su nombre, si llegaron esos datos.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-006 CA02; S07; auditoría B02"
+        },
+        {
+          "id": "CA03",
+          "original": "Si no hay datos suficientes para distinguirlos, la app no elige uno por su cuenta.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-006 CA03; S07; auditoría B02"
+        }
+      ]
+    },
+    {
+      "id": "HU-007",
+      "name": "Saber qué hacer si falta un aviso",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: receiveNotification y refresh",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La lista vacía no afirma que el cliente no pagó.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-007 CA01; S07; auditoría B06"
+        },
+        {
+          "id": "CA02",
+          "original": "La app indica que se debe consultar la billetera receptora si hace falta comprobar el ingreso.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-007 CA02; S07; auditoría B06"
+        },
+        {
+          "id": "CA03",
+          "original": "Un aviso que aparece más tarde conserva su hora y no se presenta como un pago nuevo distinto.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-007 CA03; S07; auditoría B06"
+        }
+      ]
+    },
+    {
+      "id": "HU-008",
+      "name": "Saber si la lista está al día",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda y Controles de simulación",
+      "code": "js/demo-core.js: sync",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Se muestra la hora de la última actualización realizada.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-008 CA01; S04; S05; N01"
+        },
+        {
+          "id": "CA02",
+          "original": "Puedo solicitar una nueva actualización.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-008 CA02; S04; S05; N01"
+        },
+        {
+          "id": "CA03",
+          "original": "Si falla la conexión, veo una advertencia y la hora anterior.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-008 CA03; S04; S05; N01"
+        }
+      ]
+    },
+    {
+      "id": "HU-009",
+      "name": "Juntar avisos de distintas billeteras",
+      "status": "Cumple en demo",
+      "location": "Controles de simulación y Fuentes y TarkiBox",
+      "code": "js/demo-core.js: notification y processReceiver",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La lista reúne los avisos captados de las fuentes habilitadas.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-009 CA01; S01; S02; S03; N01"
+        },
+        {
+          "id": "CA02",
+          "original": "Cada aviso conserva el nombre de su billetera si se reconoce.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-009 CA02; S01; S02; S03; N01"
+        },
+        {
+          "id": "CA03",
+          "original": "Una fuente sin permiso o sin notificaciones no se inventa en la lista.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-009 CA03; S01; S02; S03; N01"
+        }
+      ]
+    },
+    {
+      "id": "HU-010",
+      "name": "No perder avisos seguidos",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: refresh y deliver",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Los avisos diferentes se guardan como registros separados.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-010 CA01; S01; S07; C01–C17"
+        },
+        {
+          "id": "CA02",
+          "original": "La lista los ordena usando la hora disponible.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-010 CA02; S01; S07; C01–C17"
+        },
+        {
+          "id": "CA03",
+          "original": "La llegada de uno nuevo no borra el anterior.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-010 CA03; S01; S07; C01–C17"
+        }
+      ]
+    },
+    {
+      "id": "HU-011",
+      "name": "Leer el monto antes de entregar",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El monto recibido se muestra de forma fácil de leer.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-011 CA01; S03; N01"
+        },
+        {
+          "id": "CA02",
+          "original": "La app no pide escribir el precio de la venta para mostrar ese aviso.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-011 CA02; S03; N01"
+        },
+        {
+          "id": "CA03",
+          "original": "Si falta el monto, se indica que no se pudo leer.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-011 CA03; S03; N01"
+        }
+      ]
+    },
+    {
+      "id": "HU-012",
+      "name": "Crear el perfil del negocio",
+      "status": "Cumple en demo",
+      "location": "Personalizar mi negocio",
+      "code": "js/demo-core.js: createBusiness y updateBusiness",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La cuenta nueva queda asociada a un negocio con nombre identificable.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-012 CA01; S11; auditoría B13/B16"
+        },
+        {
+          "id": "CA02",
+          "original": "Solo el administrador puede cambiar el nombre y los datos de ese negocio.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-012 CA02; S11; auditoría B13/B16"
+        },
+        {
+          "id": "CA03",
+          "original": "Antes de guardar se piden los datos obligatorios; no se solicitan claves de la billetera.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-012 CA03; S11; auditoría B13/B16"
+        }
+      ]
+    },
+    {
+      "id": "HU-013",
+      "name": "No repetir el mismo aviso",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: receiveNotification y refresh",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Un aviso conserva un identificador al sincronizarse.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-013 CA01; S01; S06; S07; N01/N02"
+        },
+        {
+          "id": "CA02",
+          "original": "Reenviar ese identificador no añade otro registro.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-013 CA02; S01; S06; S07; N01/N02"
+        },
+        {
+          "id": "CA03",
+          "original": "Dos avisos realmente diferentes del mismo monto se mantienen separados.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-013 CA03; S01; S06; S07; N01/N02"
+        }
+      ]
+    },
+    {
+      "id": "HU-025",
+      "name": "Generar un código para el equipo",
+      "status": "Cumple en demo",
+      "location": "Equipo y horarios",
+      "code": "js/demo-core.js: invite",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Solo el administrador puede crear el código y ver hasta cuándo sirve.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-025 CA01; S08; N04; C06–C10"
+        },
+        {
+          "id": "CA02",
+          "original": "El código corresponde a un negocio y a los permisos que el dueño eligió.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-025 CA02; S08; N04; C06–C10"
+        },
+        {
+          "id": "CA03",
+          "original": "Un código vencido o ya utilizado no da acceso al negocio.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-025 CA03; S08; N04; C06–C10"
+        }
+      ]
+    },
+    {
+      "id": "HU-026",
+      "name": "Unirme al negocio con un código",
+      "status": "Cumple en demo",
+      "location": "Unirme con un código de invitación y selector de identidad ficticia",
+      "code": "js/demo-core.js: previewInvitation y join",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Antes de unirse se muestra el nombre del negocio y el acceso concedido.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-026 CA01; S08; N04; C06–C10"
+        },
+        {
+          "id": "CA02",
+          "original": "El código inválido, vencido o utilizado no da acceso a los cobros.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-026 CA02; S08; N04; C06–C10"
+        },
+        {
+          "id": "CA03",
+          "original": "La cuenta del colaborador no pide la clave de Yape ni permite entrar como administrador.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-026 CA03; S08; N04; C06–C10"
+        }
+      ]
+    },
+    {
+      "id": "HU-027",
+      "name": "Mostrar solo lo necesario al equipo",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El colaborador puede ver monto, hora, billetera y nombre cuando se pudieron leer.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-027 CA01; S03; auditoría B12/B13"
+        },
+        {
+          "id": "CA02",
+          "original": "La app no permite transferir dinero ni abrir la billetera del dueño.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-027 CA02; S03; auditoría B12/B13"
+        },
+        {
+          "id": "CA03",
+          "original": "Si falta un dato, aparece como no disponible en vez de pedir más acceso.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-027 CA03; S03; auditoría B12/B13"
+        }
+      ]
+    },
+    {
+      "id": "HU-028",
+      "name": "Quitar el acceso a un colaborador",
+      "status": "Cumple en demo",
+      "location": "Equipo y horarios",
+      "code": "js/demo-core.js: revokeMember y retryBroker",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Antes de retirar el acceso se muestra el nombre de la persona.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-028 CA01; S09; N03; C04/C05"
+        },
+        {
+          "id": "CA02",
+          "original": "Tras confirmarlo, deja de recibir nuevas alertas y no puede hacer nuevas consultas.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-028 CA02; S09; N03; C04/C05"
+        },
+        {
+          "id": "CA03",
+          "original": "Los avisos del negocio siguen disponibles para el administrador.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-028 CA03; S09; N03; C04/C05"
+        }
+      ]
+    },
+    {
+      "id": "HU-029",
+      "name": "Miembros con acceso",
+      "status": "Cumple en demo",
+      "location": "Equipo y horarios",
+      "code": "js/demo-core.js: team y editMember",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La lista muestra nombre, permiso y estado de cada miembro.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-029 CA01; S09; N03; auditoría B15"
+        },
+        {
+          "id": "CA02",
+          "original": "Los accesos revocados se distinguen de los vigentes.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-029 CA02; S09; N03; auditoría B15"
+        },
+        {
+          "id": "CA03",
+          "original": "Solo una persona con permiso de administración puede cambiar ese alcance.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-029 CA03; S09; N03; auditoría B15"
+        }
+      ]
+    },
+    {
+      "id": "HU-030",
+      "name": "Elegir los días y horas de avisos",
+      "status": "Cumple en demo",
+      "location": "Equipo y horarios y reloj de Controles de simulación",
+      "code": "js/demo-core.js: inShift y retryBroker",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El horario se define por persona, días y horas en la zona horaria del negocio.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-030 CA01; S10; S09"
+        },
+        {
+          "id": "CA02",
+          "original": "Fuera de ese horario no se envían nuevas alertas a esa persona.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-030 CA02; S10; S09"
+        },
+        {
+          "id": "CA03",
+          "original": "Cambiar el horario no borra los pagos anteriores ni amplía el historial permitido.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-030 CA03; S10; S09"
+        }
+      ]
+    },
+    {
+      "id": "HU-031",
+      "name": "Entrar según mi función",
+      "status": "Cumple en demo",
+      "location": "Selector de identidad ficticia y Controles de simulación",
+      "code": "js/demo-core.js: selectIdentity, membership y requireAccess",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El rol proviene de la cuenta y de los permisos otorgados por el administrador.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-031 CA01; S11; N03"
+        },
+        {
+          "id": "CA02",
+          "original": "El administrador ve negocio, Box, equipo e informes; el colaborador solo lo autorizado.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-031 CA02; S11; N03"
+        },
+        {
+          "id": "CA03",
+          "original": "Cambiar de pantalla no permite convertirse en administrador.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-031 CA03; S11; N03"
+        }
+      ]
+    },
+    {
+      "id": "HU-032",
+      "name": "Dar acceso al historial por periodo",
+      "status": "Cumple en demo",
+      "location": "Equipo y horarios y filtros de periodo",
+      "code": "js/demo-core.js: scopeBounds, query y editMember",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El permiso de hoy está separado del acceso a semana y mes.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-032 CA01; S09/S10; auditoría B14"
+        },
+        {
+          "id": "CA02",
+          "original": "El colaborador no ve pagos anteriores fuera de su alcance.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-032 CA02; S09/S10; auditoría B14"
+        },
+        {
+          "id": "CA03",
+          "original": "El administrador puede cambiar el alcance sin alterar los avisos guardados.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-032 CA03; S09/S10; auditoría B14"
+        }
+      ]
+    },
+    {
+      "id": "HU-033",
+      "name": "Revisar pagos por día, semana o mes",
+      "status": "Cumple en demo",
+      "location": "Cierre y CSV",
+      "code": "js/demo-core.js: bounds y report",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La vista permite elegir día, semana, mes o un rango de meses disponibles.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-033 CA01; auditoría B09"
+        },
+        {
+          "id": "CA02",
+          "original": "El periodo elegido y el número de avisos quedan claros.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-033 CA02; auditoría B09"
+        },
+        {
+          "id": "CA03",
+          "original": "Un periodo sin registros aparece vacío sin concluir que no hubo pagos.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-033 CA03; auditoría B09"
+        }
+      ]
+    },
+    {
+      "id": "HU-034",
+      "name": "Ver cantidad y monto de los avisos",
+      "status": "Cumple en demo",
+      "location": "Cierre y CSV",
+      "code": "js/demo-core.js: report",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El resumen muestra número de avisos y suma de los montos que pudieron leerse.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-034 CA01; auditoría B08/B10; R01"
+        },
+        {
+          "id": "CA02",
+          "original": "Un aviso sin monto se cuenta como aviso, pero no añade una cantidad inventada.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-034 CA02; auditoría B08/B10; R01"
+        },
+        {
+          "id": "CA03",
+          "original": "El resumen aclara que no muestra el saldo real de ninguna billetera.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-034 CA03; auditoría B08/B10; R01"
+        }
+      ]
+    },
+    {
+      "id": "HU-036",
+      "name": "Consultar el estado del Box desde la app",
+      "status": "Cumple en demo",
+      "location": "Fuentes y TarkiBox y Controles de simulación",
+      "code": "js/demo-core.js: boxConnected, acceptBoxDelivery y boxAcknowledge",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La ficha muestra la última conexión conocida del equipo.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-036 CA01; S06/S12; N02; T01–T07"
+        },
+        {
+          "id": "CA02",
+          "original": "La cantidad se etiqueta como avisos enviados al Box, no como pagos comprobados.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-036 CA02; S06/S12; N02; T01–T07"
+        },
+        {
+          "id": "CA03",
+          "original": "Una falta de conexión se muestra sin asegurar que el Box enseñó esos avisos.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-036 CA03; S06/S12; N02; T01–T07"
+        }
+      ]
+    },
+    {
+      "id": "HU-037",
+      "name": "Vincular el Box mediante un código",
+      "status": "Cumple en demo",
+      "location": "Fuentes y TarkiBox",
+      "code": "js/demo-core.js: newBoxCode y pairBox",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Un Box sin vincular muestra un código de vinculación de vigencia limitada.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-037 CA01; S12; N02/N04; auditoría B17/B18"
+        },
+        {
+          "id": "CA02",
+          "original": "Solo el administrador puede introducirlo y confirmar a qué negocio se asociará.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-037 CA02; S12; N02/N04; auditoría B17/B18"
+        },
+        {
+          "id": "CA03",
+          "original": "El código vencido o utilizado no vincula un equipo ni muestra pagos.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-037 CA03; S12; N02/N04; auditoría B17/B18"
+        }
+      ]
+    },
+    {
+      "id": "HU-039",
+      "name": "Buscar avisos por hora",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "Se puede elegir un intervalo de horas dentro del día visible.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-039 CA01; auditoría B04"
+        },
+        {
+          "id": "CA02",
+          "original": "La lista conserva separados los avisos que coincidan en ese intervalo.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-039 CA02; auditoría B04"
+        },
+        {
+          "id": "CA03",
+          "original": "Quitar el filtro devuelve todos los avisos del periodo.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-039 CA03; auditoría B04"
+        }
+      ]
+    },
+    {
+      "id": "HU-040",
+      "name": "Buscar un aviso por nombre",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La búsqueda usa el nombre que pudo leerse en el aviso.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-040 CA01; S03; auditoría B04"
+        },
+        {
+          "id": "CA02",
+          "original": "Los resultados muestran monto y hora para ayudar a distinguirlos.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-040 CA02; S03; auditoría B04"
+        },
+        {
+          "id": "CA03",
+          "original": "Si el aviso no trae nombre, la app no le asigna uno por su cuenta.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-040 CA03; S03; auditoría B04"
+        }
+      ]
+    },
+    {
+      "id": "HU-041",
+      "name": "Filtrar avisos por billetera",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El filtro ofrece las fuentes reconocidas por ese negocio.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-041 CA01; S02; auditoría B04"
+        },
+        {
+          "id": "CA02",
+          "original": "Solo aparecen los avisos identificados con la billetera elegida.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-041 CA02; S02; auditoría B04"
+        },
+        {
+          "id": "CA03",
+          "original": "Los avisos de origen desconocido quedan accesibles al quitar el filtro.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-041 CA03; S02; auditoría B04"
+        }
+      ]
+    },
+    {
+      "id": "HU-042",
+      "name": "Ver los avisos del día como colaborador",
+      "status": "Cumple en demo",
+      "location": "Avisos y búsqueda",
+      "code": "js/demo-core.js: query",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "La vista de hoy muestra solo los avisos del negocio al que tengo acceso.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-042 CA01; S09/S10; N03"
+        },
+        {
+          "id": "CA02",
+          "original": "Cada aviso conserva los datos que pudieron leerse.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-042 CA02; S09/S10; N03"
+        },
+        {
+          "id": "CA03",
+          "original": "Para ver otros días necesito el permiso de historial correspondiente.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-042 CA03; S09/S10; N03"
+        }
+      ]
+    },
+    {
+      "id": "HU-043",
+      "name": "Ver un desglose por billetera",
+      "status": "Cumple en demo",
+      "location": "Cierre y CSV",
+      "code": "js/demo-core.js: report",
+      "criteria": [
+        {
+          "id": "CA01",
+          "original": "El resumen separa los avisos de cada fuente reconocida y muestra su cantidad.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-043 CA01; auditoría B08/B10; R01"
+        },
+        {
+          "id": "CA02",
+          "original": "Los avisos sin billetera identificada se muestran aparte.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-043 CA02; auditoría B08/B10; R01"
+        },
+        {
+          "id": "CA03",
+          "original": "Se indica que las sumas provienen de avisos detectados y no muestran saldos reales.",
+          "status": "Cumple en demo",
+          "evidence": "acceptance.cjs HU-043 CA03; auditoría B08/B10; R01"
+        }
+      ]
+    }
+  ]
+}

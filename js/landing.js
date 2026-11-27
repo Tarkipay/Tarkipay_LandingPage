@@ -336,7 +336,10 @@
   // =========================================================================
 
   function initializeTarkiPayLogic() {
-    window.initTarkiPayDemo(demoSeed);
+    window.initTarkiPayDemo(demoSeed).catch(error => {
+      const feedback=document.querySelector('#demo .demo-intro p');
+      if(feedback){feedback.textContent=error.message;feedback.setAttribute('role','alert');}
+    });
 
     // -----------------------------------------------------------------------
     // H. Modales: Privacidad/Permisos y Legal con Trampa de Foco WAI-ARIA

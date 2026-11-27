@@ -1,0 +1,1 @@
+Informes de la entrega ANTERIOR, conservados para contraste. Su balance 20/10 no es el dictamen actual. Usar ../INFORME_CORRECCIONES_20261125.md y ../matriz_30_HU.json. Los originales intactos están también en sources/.

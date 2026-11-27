@@ -105,7 +105,7 @@
           </button>
 
           <button type="button" class="btn-chip primary-chip" id="btn-simulate-incoming">
-            + Simular nuevo aviso
+            + Simular aviso
           </button>
         </div>
       </div>
@@ -134,9 +134,9 @@
       <!-- MÓDULO 1: AVISOS Y BÚSQUEDA -->
       <div id="tab-avisos" class="sim-panel active" role="tabpanel">
         <div class="sim-grid-2">
-          <div class="card panel-card">
+          <div class="card panel-card notice-filters">
             <div class="panel-card-header">
-              <h3>Buscar y filtrar avisos</h3>
+              <h3>Filtrar avisos</h3>
               <button type="button" class="btn-text" id="btn-refresh-avisos">
                 Actualizar lista ahora
               </button>
@@ -144,7 +144,7 @@
 
             <form id="form-filter-avisos" class="form-stack" novalidate>
               <div class="form-group">
-                <label for="filter-amount">Filtrar por monto en soles</label>
+                <label for="filter-amount">Monto en soles</label>
                 <div class="input-with-btn">
                   <input type="number" id="filter-amount" step="0.01" placeholder="Ej. 20.00" />
                   <button type="submit" class="btn btn-primary btn-sm">Buscar</button>
@@ -153,18 +153,18 @@
               </div>
 
               <div class="quick-filter-chips">
-                <button type="button" class="chip-btn" data-quick-amount="20">Ver pagos de S/ 20.00</button>
-                <button type="button" class="chip-btn" data-quick-amount="99">Probar monto sin resultados (S/ 99)</button>
-                <button type="button" class="chip-btn" data-quick-amount="-5">Probar validación de error (S/ -5)</button>
+                <button type="button" class="chip-btn" data-quick-amount="20">S/ 20</button>
+                <button type="button" class="chip-btn" data-quick-amount="99">Sin resultados: S/ 99</button>
+                <button type="button" class="chip-btn" data-quick-amount="-5">Validación: S/ -5</button>
               </div>
 
               <div class="form-group">
-                <label for="filter-sender">Buscar por nombre recibido</label>
+                <label for="filter-sender">Nombre recibido</label>
                 <input type="text" id="filter-sender" placeholder="Ej. María López o Carlos" />
               </div>
 
               <div class="form-group">
-                <label>Filtrar por billetera de origen</label>
+                <label>Billetera de origen</label>
                 <div class="segmented-buttons" id="wallet-channel-filter">
                   <button type="button" class="seg-btn active" data-channel="all">Todas</button>
                   <button type="button" class="seg-btn" data-channel="Yape">Yape</button>
@@ -184,7 +184,7 @@
             </div>
           </div>
 
-          <div class="card panel-card">
+          <div class="card panel-card notice-results">
             <div class="panel-card-header">
               <div>
                 <h3>Avisos de hoy en <span class="dynamic-biz-name">Bodega La Esquina</span></h3>
@@ -192,15 +192,25 @@
               </div>
             </div>
 
-            <div id="avisos-list-container" class="avisos-stack" aria-live="polite"></div>
+            <div class="notice-board">
+              <div id="avisos-list-container" class="avisos-stack" aria-live="polite"></div>
+              <div class="notice-detail-slot">
+                <div class="notice-detail-placeholder">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6m-6 4h6m-6 4h3"/></svg>
+                  <h4>Cada aviso, con su contexto.</h4>
+                  <p>Selecciona una operación para consultar el importe, el emisor y la información recibida.</p>
+                  <p class="detail-safety">Un aviso detectado no confirma el abono. Si tienes dudas, revisa la billetera receptora.</p>
+                </div>
 
             <!-- Cajón de Detalle del Aviso -->
             <div id="aviso-detail-drawer" class="detail-drawer hidden" role="region" aria-label="Detalle del aviso seleccionado">
               <div class="detail-drawer-header">
-                <h4>Información completa del aviso</h4>
+                <h4>Detalle del aviso</h4>
                 <button type="button" class="btn-text" id="btn-close-detail">Cerrar detalle</button>
               </div>
               <div id="aviso-detail-content"></div>
+            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +220,7 @@
       <div id="tab-ventas" class="sim-panel" role="tabpanel">
         <div class="sim-grid-2">
           <div class="card panel-card">
-            <h3>Comparar y asociar aviso con venta actual</h3>
+            <h3>Asociar una venta</h3>
             <p class="text-small text-muted mb-16">Compara el importe esperado con el aviso. Una coincidencia no confirma el abono.</p>
 
             <form id="form-vincular-venta" class="form-stack" novalidate>
@@ -247,7 +257,7 @@
           <div class="card panel-card">
             <div class="panel-card-header">
               <div>
-                <h3>Solicitudes de revisión al administrador</h3>
+                <h3>Consultas al equipo</h3>
                 <p class="text-small text-muted">Envía una consulta rápida con el monto y la venta sin tener que mandar capturas por WhatsApp.</p>
               </div>
             </div>
@@ -282,7 +292,7 @@
       <div id="tab-equipo" class="sim-panel" role="tabpanel">
         <div class="sim-grid-2">
           <div class="card panel-card">
-            <h3>Invitar a un colaborador al negocio</h3>
+            <h3>Invitar al equipo</h3>
             <p class="text-small text-muted mb-16">Explora el alcance y el horario del colaborador. Los accesos y códigos son simulados.</p>
 
             <form id="form-invite-member" class="form-stack" novalidate>
@@ -320,7 +330,7 @@
           </div>
 
           <div class="card panel-card">
-            <h3>Integrantes con acceso y registro de actividad</h3>
+            <h3>Acceso al negocio</h3>
             <p class="text-small text-muted mb-16">Consulta el equipo de ejemplo y simula retirar un acceso.</p>
 
             <div id="team-members-list" class="compact-list"></div>
@@ -335,7 +345,7 @@
       <div id="tab-dispositivos" class="sim-panel" role="tabpanel">
         <div class="sim-grid-2">
           <div class="card panel-card">
-            <h3>Fuentes de notificación en el teléfono receptor</h3>
+            <h3>Fuentes de avisos</h3>
             <p class="text-small text-muted mb-16">Simula activar o desactivar una fuente. Los avisos previos se conservan.</p>
 
             <div class="sources-list">
@@ -372,12 +382,12 @@
           </div>
 
           <div class="card panel-card">
-            <h3>Configuración de TarkiPay Box Mostrador</h3>
-            <p class="text-small text-muted mb-16">Explora la vinculación y el volumen. No se conecta un dispositivo físico.</p>
+            <h3>TarkiBox virtual</h3>
+            <p class="text-small text-muted mb-16">Vinculación y comunicación simuladas. Sin conexión a un equipo físico.</p>
 
             <div class="box-monitor-card">
               <div>
-                <span class="tag-step">ESTADO DEL DISPOSITIVO EN MOSTRADOR</span>
+                <span class="tag-step">Dispositivo virtual</span>
                 <h4 id="box-connection-title">Sin Box vinculado</h4>
                 <p id="box-connection-sub">Sin comunicación física ni virtual registrada.</p>
               </div>
@@ -419,7 +429,7 @@
         <div class="card panel-card">
           <div class="panel-card-header">
             <div>
-              <h3>Resumen por periodo y cuadre de cierre</h3>
+              <h3>Resumen y cierre</h3>
               <p class="text-small text-muted">Los importes detectados por notificación se muestran separados de aquellos revisados expresamente en la billetera receptora.</p>
             </div>
             <div class="cierre-controls">
@@ -431,28 +441,28 @@
                 <option value="ALL">Mes completo · Octubre de 2026</option>
               </select>
               <button type="button" class="btn btn-primary btn-sm" id="btn-export-csv">
-                Descargar Reporte CSV
+                Descargar CSV
               </button>
             </div>
           </div>
 
           <div class="grid-3 mt-16">
             <div class="summary-stat-card indigo-card">
-              <span class="stat-label">TOTAL EN AVISOS DETECTADOS</span>
+              <span class="stat-label">Importes detectados</span>
               <strong class="stat-value" id="stat-total-avisos">S/ 55.00</strong>
               <p class="stat-note" id="stat-count-avisos">4 avisos registrados · 3 con importe legible.</p>
             </div>
 
             <div class="summary-stat-card green-card">
-              <span class="stat-label">COBROS REVISADOS EN BILLETERA</span>
+              <span class="stat-label">Revisado en billetera</span>
               <strong class="stat-value" id="stat-total-revisados">S/ 35.00</strong>
               <p class="stat-note">Verificados manualmente en la app receptora.</p>
             </div>
 
             <div class="summary-stat-card amber-card">
-              <span class="stat-label">VENTAS POR REVISAR AL CIERRE</span>
+              <span class="stat-label">Ventas por revisar</span>
               <strong class="stat-value" id="stat-total-pendientes">1 pendiente</strong>
-              <p class="stat-note">Operaciones con diferencia o pendientes de confirmación.</p>
+              <p class="stat-note">Ventas de hoy pendientes de confirmación.</p>
             </div>
           </div>
 

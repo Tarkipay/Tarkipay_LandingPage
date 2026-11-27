@@ -1,3 +1,15 @@
+# Checkpoint de corrección del 25 de noviembre de 2026
+
+Copia editable derivada del ZIP TarkiPay_Fuentes_para_Codex_2026-11-25.zip. Originales preservados en sources/. No se modificó la entrega anterior ni se hizo push.
+
+Se reprodujeron D03/HU-010 CA03 y D01/HU-036 CA03 antes del cambio. Persistencia del navegador corregida con transacciones IndexedDB por entidad; política única de conexión y estados del canal virtual. Ver docs/INFORME_CORRECCIONES_20261125.md para conflictos, migración, límites y evidencias.
+
+Resultado final: 16 HU Cumple, 14 Parcial, 0 ausentes frente a las fichas originales. No se certifica 30/30 integrado. Regresiones: 94 del modelo, 21 de navegador y 27 nuevas PASS; diagnóstico adicional conserva 2 FAIL por límites de identidad y datos locales.
+
+Diseño aprobado preservado: componentes, CSS y assets idénticos. No se incorporan pantallas ni controles nuevos. El adaptador IndexedDB y las esperas asíncronas solo cambian comportamiento funcional y estado comunicado.
+
+## Checkpoint anterior conservado como histórico
+
 # TarkiPay checkpoint funcional
 
 Fecha: 23 de noviembre de 2026, America/Lima.
